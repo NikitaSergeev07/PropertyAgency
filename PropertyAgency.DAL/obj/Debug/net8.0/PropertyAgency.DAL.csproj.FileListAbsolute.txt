@@ -1,0 +1,17 @@
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/bin/Debug/net8.0/PropertyAgency.DAL.deps.json
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/bin/Debug/net8.0/PropertyAgency.DAL.runtimeconfig.json
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/bin/Debug/net8.0/PropertyAgency.DAL.dll
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/bin/Debug/net8.0/PropertyAgency.DAL.pdb
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/bin/Debug/net8.0/PropertyAgency.Domain.dll
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/bin/Debug/net8.0/PropertyAgency.Domain.pdb
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.csproj.AssemblyReference.cache
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.AssemblyInfoInputs.cache
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.AssemblyInfo.cs
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.csproj.CoreCompileInputs.cache
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/Property.375F26A9.Up2Date
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.dll
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/refint/PropertyAgency.DAL.dll
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.pdb
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.genruntimeconfig.cache
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/ref/PropertyAgency.DAL.dll
