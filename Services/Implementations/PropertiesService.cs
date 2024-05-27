@@ -29,7 +29,7 @@ public class PropertiesService : IPropertiesService
         return await _propertiesRepository.Delete(id);
     }
 
-    public async Task<bool> CreateProperty(Property entity)
+    public async Task<Property> CreateProperty(Property entity)
     {
         return await _propertiesRepository.Create(entity);
     }

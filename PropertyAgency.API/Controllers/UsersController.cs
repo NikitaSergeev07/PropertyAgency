@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PropertyAgency.API.Dtos;
 using PropertyAgency.Domain.Entities;
@@ -37,6 +38,7 @@ public class UsersController : ControllerBase
     }
     
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetUsers()
     {
         var users = await _usersService.GetUsers();

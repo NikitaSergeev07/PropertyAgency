@@ -12,11 +12,11 @@ public class PropertiesRepository : IPropertiesRepository
     {
         _context = context;
     }
-    public async Task<bool> Create(Property entity)
+    public async Task<Property> Create(Property entity)
     {
         await _context.Properties.AddAsync(entity);
         await _context.SaveChangesAsync();
-        return true;
+        return entity;
     }
 
     public async Task<Property> GetById(Guid id)

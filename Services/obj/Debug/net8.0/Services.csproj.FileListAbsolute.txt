@@ -17,3 +17,4 @@
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/obj/Debug/net8.0/ref/Services.dll
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/bin/Debug/net8.0/Services.runtimeconfig.json
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/obj/Debug/net8.0/Services.genruntimeconfig.cache
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/obj/Debug/net8.0/Services.sourcelink.json

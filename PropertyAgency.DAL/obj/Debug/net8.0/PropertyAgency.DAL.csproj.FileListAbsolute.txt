@@ -15,3 +15,4 @@
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.pdb
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.genruntimeconfig.cache
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/ref/PropertyAgency.DAL.dll
+/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.sourcelink.json

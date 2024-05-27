@@ -8,6 +8,6 @@ public interface IPropertiesService
 
     Task<Property> GetById(Guid id);
     Task<bool> DeleteProperty(Guid id);
-    Task<bool> CreateProperty(Property entity);
+    Task<Property> CreateProperty(Property entity);
     Task<bool> UpdateProperty(Property entity);
 }

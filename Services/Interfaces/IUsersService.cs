@@ -9,7 +9,7 @@ public interface IUsersService
 
     Task<User> GetById(Guid id);
     Task<bool> DeleteUser(Guid id);
-    Task<bool> CreateUser(User entity);
+    Task<User> CreateUser(User entity);
     Task<bool> UpdateUser(User entity);
     Task<User> GetByEmail(string email);
 

@@ -13,11 +13,11 @@ namespace PropertyAgency.DAL.Repositories
             _context = context;
         }
         
-        public async Task<bool> Create(User entity)
+        public async Task<User> Create(User entity)
         {
             await _context.Users.AddAsync(entity);
             await _context.SaveChangesAsync();
-            return true;
+            return entity;
         }
 
         public async Task<User> GetById(Guid id)

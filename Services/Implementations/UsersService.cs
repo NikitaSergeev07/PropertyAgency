@@ -26,7 +26,7 @@ public class UsersService : IUsersService
         return await _usersRepository.GetById(id);
     }
     
-    public async Task<bool> CreateUser(User entity)
+    public async Task<User> CreateUser(User entity)
     {
         return await _usersRepository.Create(entity);
     }
