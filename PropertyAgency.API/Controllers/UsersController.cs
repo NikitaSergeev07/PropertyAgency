@@ -38,9 +38,14 @@ public class UsersController : ControllerBase
     }
     
     [HttpGet]
-    [Authorize]
+    // [Authorize]
     public async Task<IActionResult> GetUsers()
     {
+        // var token = Request.Cookies["jwt"];
+        // if (string.IsNullOrEmpty(token))
+        // {
+        //     return Unauthorized();
+        // }
         var users = await _usersService.GetUsers();
         
         return Ok(users);

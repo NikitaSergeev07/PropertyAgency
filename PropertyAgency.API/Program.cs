@@ -1,63 +1,58 @@
-using System.Reflection;
-using System.Text;
-using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using PropertyAgency.API.Contracts;
-using PropertyAgency.API.repo;
 using PropertyAgency.DAL;
-using PropertyAgency.DAL.DependencyInjection;
 using PropertyAgency.DAL.Interfaces;
 using PropertyAgency.DAL.Repositories;
+using Services.Helpers;
 using Services.Implementations;
 using Services.Interfaces;
 
-
 var builder = WebApplication.CreateBuilder(args);
-var configuration = builder.Configuration;
+
 // Add services to the container.
-
-
-builder.Services.AddControllers().AddNewtonsoftJson(options => 
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-    );
+);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(swagger =>
-{
-    swagger.SwaggerDoc("v1", new OpenApiInfo
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors();
+
+builder.Services.AddDbContext<ApplicationDbContext>(
+    options =>
     {
-        Version = "v1",
-        Title = "ASP.NET 8 Web API",
-        Description = "Authentication with JWT"
-    });
-    swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+        options.UseSqlite(builder.Configuration.GetConnectionString(nameof(ApplicationDbContext)));
+    }
+);
+
+builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IPropertiesRepository, PropertiesRepository>();
+builder.Services.AddScoped<IPropertiesService, PropertiesService>();
+builder.Services.AddScoped<JwtService>();
+
+var (tokenValidationParameters, secureKey) = TokenValidationParametersFactory.Create(builder.Configuration);
+builder.Services.AddSingleton(tokenValidationParameters);
+builder.Services.AddSingleton(secureKey);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
     {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header
-    });
-    swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
+        options.TokenValidationParameters = tokenValidationParameters;
+        options.Events = new JwtBearerEvents
         {
-            new OpenApiSecurityScheme
+            OnMessageReceived = context =>
             {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            }, Array.Empty<string>()
-        }
+                context.Token = context.Request.Cookies["jwt"];
+                return Task.CompletedTask;
+            }
+        };
     });
-});
 
+builder.Services.AddAuthorization();
 
-
-builder.Services.InfrastructureServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -69,6 +64,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors(options => options
+    .WithOrigins(new[] { "http://localhost:3000", "http://localhost:8080", "https://localhost:4200" })
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+);
 
 app.UseAuthentication();
 app.UseAuthorization();
