@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PropertyAgency.API.Dtos.Auth;
 using PropertyAgency.Domain.Entities;
+using PropertyAgency.Domain.Enums;
 using Services.Helpers;
 using Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace PropertyAgency.API.Controllers
 {
@@ -28,11 +30,12 @@ namespace PropertyAgency.API.Controllers
             {
                 UserName = regDto.UserName,
                 Email = regDto.Email,
-                Password = BCrypt.Net.BCrypt.HashPassword(regDto.Password)
+                Password = BCrypt.Net.BCrypt.HashPassword(regDto.Password),
+                Role = TypeRole.User // Assign a default role, e.g., "User"
             };
             
             var createdUser = await _usersService.CreateUser(newUser);
-            var jwt = _jwtService.Generate(createdUser.Id);
+            var jwt = _jwtService.Generate(createdUser.Id, createdUser.Role);
             Response.Cookies.Append("jwt", jwt, new CookieOptions
             {
                 HttpOnly = true
@@ -56,7 +59,7 @@ namespace PropertyAgency.API.Controllers
                 return BadRequest(new { message = "Invalid credentials" });
             }
 
-            var jwt = _jwtService.Generate(user.Id);
+            var jwt = _jwtService.Generate(user.Id, user.Role);
             Response.Cookies.Append("jwt", jwt, new CookieOptions
             {
                 HttpOnly = true
@@ -94,7 +97,7 @@ namespace PropertyAgency.API.Controllers
                 return Unauthorized();
             }
 
-            Guid userId = Guid.Parse(jwtToken.Issuer);
+            Guid userId = Guid.Parse(jwtToken.Subject);
             var user = await _usersService.GetById(userId);
             var jwt = jwtToken.RawData;
             return Ok(new
@@ -112,6 +115,13 @@ namespace PropertyAgency.API.Controllers
             {
                 message = "success"
             });
+        }
+
+        [HttpGet("admin")]
+        [Authorize(Policy = "AdminPolicy")]
+        public IActionResult AdminEndpoint()
+        {
+            return Ok("Вы админ");
         }
     }
 }
