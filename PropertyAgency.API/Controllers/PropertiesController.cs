@@ -21,7 +21,7 @@ public class PropertiesController : ControllerBase
         result.Title = payload.Title;
         result.Description = payload.Description;
         result.Price = payload.Price;
-        result.TypeProperty = payload.TypeProperty;
+        result.RoomCount = payload.RoomCount;
         result.Status = payload.Status;
         result.UserId = payload.UserId;
         return result;

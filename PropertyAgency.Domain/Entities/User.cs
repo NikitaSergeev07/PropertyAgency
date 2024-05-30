@@ -13,10 +13,13 @@ public class User
     public TypeRole Role { get; set; } = TypeRole.User;
 
     public List<Property> Properties { get; set; }
-
+    public List<Favorite> Favorites { get; set; }
+    public List<Rental> Rentals { get; set; }
     public User()
     {
         Properties = new List<Property>();
+        Favorites = new List<Favorite>();
+        Rentals = new List<Rental>();
     }
 
 

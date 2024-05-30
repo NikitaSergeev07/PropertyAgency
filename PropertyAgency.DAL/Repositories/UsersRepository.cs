@@ -25,6 +25,7 @@ namespace PropertyAgency.DAL.Repositories
             return await _context.Users
                 .AsNoTracking()
                 .Include(u => u.Properties)
+                .Include(u => u.Favorites)
                 .Where(u => u.Id == id)
                 .FirstOrDefaultAsync();
         }
@@ -34,6 +35,7 @@ namespace PropertyAgency.DAL.Repositories
             return await _context.Users
                 .AsNoTracking()
                 .Include(u => u.Properties)
+                .Include(u => u.Favorites)
                 .ToListAsync();
         }
 
@@ -42,6 +44,7 @@ namespace PropertyAgency.DAL.Repositories
             await _context.Users
                 .Where(u => u.Id == id)
                 .Include(u => u.Properties)
+                .Include(u => u.Favorites)
                 .ExecuteDeleteAsync();
             return true;
         }
@@ -50,6 +53,8 @@ namespace PropertyAgency.DAL.Repositories
         {
             await _context.Users
                 .Where(u => u.Id == entity.Id)
+                .Include(u => u.Favorites)
+                .Include(u => u.Properties)
                 .ExecuteUpdateAsync(s => s
                     .SetProperty(u => u.UserName, entity.UserName)
                     .SetProperty(u => u.Email, entity.Email)
@@ -63,7 +68,17 @@ namespace PropertyAgency.DAL.Repositories
             return await _context.Users
                 .AsNoTracking()
                 .Include(u => u.Properties)
+                .Include(u => u.Favorites)
                 .FirstOrDefaultAsync(u => u.Email == email);
+        }
+        
+        public async Task<List<Favorite>> GetFavoritesForUser(Guid userId)
+        {
+            var user = await _context.Users.AsNoTracking()
+                .Include(u => u.Properties)
+                .Include(u => u.Favorites)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+            return user.Favorites;
         }
     }
 }

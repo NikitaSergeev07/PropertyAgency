@@ -44,4 +44,9 @@ public class UsersService : IUsersService
     {
         return await _usersRepository.GetByEmail(email);
     }
+
+    public async Task<IEnumerable<Favorite>> GetFavoritsForUser(Guid id)
+    {
+        return await _usersRepository.GetFavoritesForUser(id);
+    }
 }

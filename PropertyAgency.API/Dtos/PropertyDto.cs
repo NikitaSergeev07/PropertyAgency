@@ -8,7 +8,8 @@ public class PropertyDto
     public string Title { get; set; }
     public string Description { get; set; }
     public decimal Price { get; set; }
-    public TypeProperty TypeProperty { get; set; }
-    public TypeStatus Status { get; set; }
+    public int RoomCount { get; set; }
+    public string Status { get; set; }
     public Guid UserId { get; set; }
+    public List<FavoriteDto> Favorites { get; set; } = new List<FavoriteDto>();
 }

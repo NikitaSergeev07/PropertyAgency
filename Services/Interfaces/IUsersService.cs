@@ -13,4 +13,6 @@ public interface IUsersService
     Task<bool> UpdateUser(User entity);
     Task<User> GetByEmail(string email);
 
+    Task<IEnumerable<Favorite>> GetFavoritsForUser(Guid id);
+
 }

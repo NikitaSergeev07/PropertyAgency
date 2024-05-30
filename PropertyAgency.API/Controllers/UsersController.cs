@@ -30,7 +30,7 @@ public class UsersController : ControllerBase
             newProperty.Title = p.Title;
             newProperty.Description = p.Description;
             newProperty.Price = p.Price;
-            newProperty.TypeProperty = p.TypeProperty;
+            newProperty.RoomCount = p.RoomCount;
             newProperty.Status = p.Status;
             result.Properties.Add(newProperty);
         });
@@ -85,6 +85,13 @@ public class UsersController : ControllerBase
     {
         return Ok(await _usersService.DeleteUser(id));
     
+    }
+    
+    [HttpGet("list_favorites/{{id}}")]
+    public async Task<IActionResult> GetFavoritesForUser(Guid id)
+    {
+        var favorites = _usersService.GetFavoritsForUser(id);
+        return Ok(favorites);
     }
     
 }

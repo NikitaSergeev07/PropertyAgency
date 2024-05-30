@@ -10,4 +10,5 @@ public class UserDto
     public TypeRole Role { get; set; }
 
     public List<PropertyDto> Properties { get; set; } = new List<PropertyDto>();
+    public List<FavoriteDto> Favorites { get; set; } = new List<FavoriteDto>();
 }

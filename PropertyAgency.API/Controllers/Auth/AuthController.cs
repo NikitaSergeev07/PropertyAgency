@@ -30,8 +30,19 @@ namespace PropertyAgency.API.Controllers
                 Email = regDto.Email,
                 Password = BCrypt.Net.BCrypt.HashPassword(regDto.Password)
             };
+            
             var createdUser = await _usersService.CreateUser(newUser);
-            return Created("success", createdUser);
+            var jwt = _jwtService.Generate(createdUser.Id);
+            Response.Cookies.Append("jwt", jwt, new CookieOptions
+            {
+                HttpOnly = true
+            });
+            return Ok(new
+            {
+                message = "success",
+                createdUser,
+                jwt
+            });
         }
 
         [HttpPost("login")]
@@ -53,7 +64,8 @@ namespace PropertyAgency.API.Controllers
 
             return Ok(new
             {
-                message = "success"
+                message = "success",
+                jwt
             });
         }
 
@@ -84,7 +96,12 @@ namespace PropertyAgency.API.Controllers
 
             Guid userId = Guid.Parse(jwtToken.Issuer);
             var user = await _usersService.GetById(userId);
-            return Ok(user);
+            var jwt = jwtToken.RawData;
+            return Ok(new
+            {
+                user,
+                jwt
+            });
         }
 
         [HttpPost("logout")]
