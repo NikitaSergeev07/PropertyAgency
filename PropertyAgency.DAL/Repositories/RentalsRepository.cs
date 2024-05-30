@@ -51,10 +51,13 @@ public class RentalsRepository : IRentalsRepository
                 .SetProperty(p => p.RenterId, p => entity.RenterId));
         return true;
     }
-
-    public Task<Rental> GetByBetweenDate(Guid id)
+    public async Task<IEnumerable<Rental>> GetByBetweenDate(DateTime startDate, DateTime endDate)
     {
-        //сделать
-        throw new NotImplementedException();
+        return await _context.Rentals
+            .AsNoTracking()
+            .Include(e => e.Property)
+            .Include(e => e.User)
+            .Where(r => r.StartDate >= startDate && r.EndDate <= endDate)
+            .ToListAsync();
     }
 }

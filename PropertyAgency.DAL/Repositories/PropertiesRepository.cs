@@ -21,18 +21,18 @@ public class PropertiesRepository : IPropertiesRepository
 
     public async Task<Property> GetById(Guid id)
     {
-        return await _context.Properties.AsNoTracking().Include(e => e.User).Include(e => e.Favorites).Include(e => e.Address).FirstOrDefaultAsync(p => p.Id == id);
+        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.User).Include(e => e.Favorites).Include(e => e.Address).FirstOrDefaultAsync(p => p.Id == id);
 
     }
 
     public async Task<List<Property>> Get()
     {
-        return await _context.Properties.AsNoTracking().Include(e => e.User).Include(e => e.Favorites).Include(e => e.Address).ToListAsync();
+        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.User).Include(e => e.Favorites).Include(e => e.Address).ToListAsync();
     }
 
     public async Task<bool> Delete(Guid id)
     {
-        await _context.Properties.Where(p => p.Id == id).Include(e => e.Favorites).ExecuteDeleteAsync();
+        await _context.Properties.Where(p => p.Id == id).Include(e => e.Rentals).Include(e => e.Favorites).ExecuteDeleteAsync();
         return true;
     }
 
@@ -43,6 +43,7 @@ public class PropertiesRepository : IPropertiesRepository
             .Include(e => e.User)
             .Include(e => e.Favorites)
             .Include(e => e.Address)
+            .Include(e => e.Rentals)
             .ExecuteUpdateAsync(s => s
                 .SetProperty(p => p.Title, p => entity.Title)
                 .SetProperty(p => p.Description, p => entity.Description)

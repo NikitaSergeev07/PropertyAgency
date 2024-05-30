@@ -4,5 +4,5 @@ namespace PropertyAgency.DAL.Interfaces;
 
 public interface IRentalsRepository : IBaseRepository<Rental>
 {
-    Task<Rental> GetByBetweenDate(Guid id);
+    Task<IEnumerable<Rental>> GetByBetweenDate(DateTime startDate, DateTime endDate);
 }
