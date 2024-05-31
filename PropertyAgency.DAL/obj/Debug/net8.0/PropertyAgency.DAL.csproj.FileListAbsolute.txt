@@ -16,3 +16,21 @@
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.genruntimeconfig.cache
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/ref/PropertyAgency.DAL.dll
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/Debug/net8.0/PropertyAgency.DAL.sourcelink.json
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\bin\Debug\net8.0\PropertyAgency.DAL.deps.json
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\bin\Debug\net8.0\PropertyAgency.DAL.runtimeconfig.json
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\bin\Debug\net8.0\PropertyAgency.DAL.dll
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\bin\Debug\net8.0\PropertyAgency.DAL.pdb
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\bin\Debug\net8.0\PropertyAgency.Domain.dll
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\bin\Debug\net8.0\PropertyAgency.Domain.pdb
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.csproj.AssemblyReference.cache
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.AssemblyInfoInputs.cache
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.AssemblyInfo.cs
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.csproj.CoreCompileInputs.cache
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.sourcelink.json
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\Property.375F26A9.Up2Date
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.dll
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\refint\PropertyAgency.DAL.dll
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.pdb
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\PropertyAgency.DAL.genruntimeconfig.cache
+C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.DAL\obj\Debug\net8.0\ref\PropertyAgency.DAL.dll

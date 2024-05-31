@@ -18,11 +18,13 @@ public class Property
 
     public List<Favorite> Favorites { get; set; }
     public List<Rental> Rentals { get; set; }
+    public List<Transaction> Transactions { get; set; }
 
     public Property()
     {
         Favorites = new List<Favorite>();
         Rentals = new List<Rental>();
+        Transactions = new List<Transaction>();
     }
     
 }

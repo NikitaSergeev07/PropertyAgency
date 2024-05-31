@@ -37,6 +37,8 @@ builder.Services.AddScoped<IAddressesRepository, AddressesRepository>();
 builder.Services.AddScoped<IAddressesService, AddressesService>();
 builder.Services.AddScoped<IRentalsRepository, RentalsRepository>();
 builder.Services.AddScoped<IRentalsService, RentalsService>();
+builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
+builder.Services.AddScoped<ITransactionsService, TransactionsService>();
 builder.Services.AddScoped<JwtService>();
 
 var (tokenValidationParameters, secureKey) = TokenValidationParametersFactory.Create(builder.Configuration);

@@ -4515,32 +4515,35 @@
     ]
   },
   "packageFolders": {
-    "/Users/mac/.nuget/packages/": {}
+    "C:\\Users\\89169\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+      "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
       "projectName": "PropertyAgency.API",
-      "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
-      "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/obj/",
+      "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
+      "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mac/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj": {
-              "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj"
+            "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj"
             }
           }
         }
@@ -4617,7 +4620,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -15,6 +15,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Rental> Rentals { get; set; }
 
+    public DbSet<Transaction> Transactions { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -46,5 +48,20 @@ public class ApplicationDbContext : DbContext
             .HasOne(_ => _.Property)
             .WithMany(_ => _.Rentals)
             .HasForeignKey(_ => _.PropertyId);
+        
+        modelBuilder.Entity<Transaction>()
+            .HasOne(_ => _.Property)
+            .WithMany(_ => _.Transactions)
+            .HasForeignKey(_ => _.PropertyId);
+        
+        modelBuilder.Entity<Transaction>()
+            .HasOne(_ => _.Buyer)
+            .WithMany(_ => _.Transactions)
+            .HasForeignKey(_ => _.BuyerId);
+        
+        modelBuilder.Entity<Transaction>()
+            .HasOne(_ => _.Seller)
+            .WithMany(_ => _.Transactions)
+            .HasForeignKey(_ => _.SellerId);
     }
 }

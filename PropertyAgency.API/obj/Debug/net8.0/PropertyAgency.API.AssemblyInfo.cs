@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PropertyAgency.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+560b53b8991ed0085355a1b08430b3c699bb521f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39604fda5298c84780230e6d87a2cec1ab92ede4")]
 [assembly: System.Reflection.AssemblyProductAttribute("PropertyAgency.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PropertyAgency.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
