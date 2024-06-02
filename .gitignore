@@ -1,3 +1,11 @@
-PropertyAgency.API/obj
-PropertyAgency.DAL/obj
-PropertyAgency.Domain/obj
+PropertyAgency.API/obj/
+PropertyAgency.DAL/obj/
+PropertyAgency.Domain/obj/
+/PropertyAgency.API/obj
+/PropertyAgency.API/obj
+/PropertyAgency.API/obj
+/PropertyAgency.API/obj/Debug
+/PropertyAgency.API/obj
+/Services/obj
+/Services/obj
+/Services/obj
