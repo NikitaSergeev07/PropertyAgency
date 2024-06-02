@@ -9,7 +9,7 @@ using Services.Interfaces;
 namespace PropertyAgency.API.Controllers;
 
 
-[Authorize]
+[Authorize(Policy = "UserPolicy")]
 [ApiController]
 [Route("[controller]")]
 public class FavoritesController : ControllerBase

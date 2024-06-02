@@ -6,7 +6,6 @@ using PropertyAgency.Domain.Enums;
 using Services.Helpers;
 using Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 
 namespace PropertyAgency.API.Controllers
 {
@@ -73,7 +72,7 @@ namespace PropertyAgency.API.Controllers
         }
 
         [HttpGet("user")]
-        [Authorize]
+        [Authorize(Policy = "UserPolicy")]
         public async Task<IActionResult> User()
         {
             var token = Request.Cookies["jwt"];

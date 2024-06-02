@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PropertyAgency.API.Dtos;
+using PropertyAgency.API.Dtos.Filter;
 using PropertyAgency.Domain.Entities;
 using Services.Interfaces;
 
@@ -63,6 +64,20 @@ public class PropertiesController : ControllerBase
     {
         return Ok(await _propertiesService.DeleteProperty(id));
     
+    }
+    
+    [HttpGet("filtered")]
+    public async Task<ActionResult<List<Property>>> GetFilteredProperties([FromQuery] PropertyFilterDTO filter)
+    {
+        try
+        {
+            List<Property> properties = await _propertiesService.GetFilteredProperties(filter.Rooms, filter.PriceMin, filter.PriceMax, filter.Street, filter.City, filter.State, filter.Country, filter.ZipCode);
+            return Ok(properties);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
     }
     
     
