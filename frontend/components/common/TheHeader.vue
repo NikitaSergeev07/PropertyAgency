@@ -2,12 +2,14 @@
     <header class="TheHeader">
         <div :class="[$style.wrapper, 'container']">
             <div :class="$style.top">
-                <img
-                    src="https://storage.yandexcloud.net/daily-flex/lian/logo.png"
-                    alt=""
-                    loading="lazy"
-                    :class="$style.image"
-                />
+                <UiLink to="/">
+                    <img
+                        src="https://storage.yandexcloud.net/daily-flex/lian/logo.png"
+                        alt=""
+                        loading="lazy"
+                        :class="$style.image"
+                    />
+                </UiLink>
 
                 <div :class="$style.list">
                     <UiLink
