@@ -47,7 +47,7 @@ public class AddressesController : ControllerBase
         await _addressesService.CreateAddress(newAddress);
         return Created($"/address/{newAddress.Id}", newAddress);
     }
-    [HttpPut("{id:guid}")]
+    [HttpPatch("{id:guid}")]
     public async Task<IActionResult> UpdateAddress(Guid id, AddressDto address)
     {
         var updateAddress = MapCustomerObject(address);

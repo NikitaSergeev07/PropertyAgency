@@ -49,7 +49,7 @@ public class PropertiesController : ControllerBase
         await _propertiesService.CreateProperty(newProperty);
         return Created($"/property/{newProperty.Id}", newProperty);
     }
-    [HttpPut("{id:guid}")]
+    [HttpPatch("{id:guid}")]
     public async Task<IActionResult> UpdateProperty(Guid id, PropertyDto property)
     {
         var updateProperty = MapCustomerObject(property);

@@ -13,11 +13,11 @@ public class FavoritesRepository : IFavoritesRepository
         _context = context;
     }
     
-    public async Task<Favorite> Create(Favorite entity)
+    public async Task<Guid> Create(Favorite entity)
     {
         await _context.Favorites.AddAsync(entity);
         await _context.SaveChangesAsync();
-        return entity;
+        return entity.Id;
     }
     
 
