@@ -1,0 +1,31 @@
+.UiIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.--small-size {
+        width: mul($unit, 4);
+        height: mul($unit, 4);
+    }
+
+    &.--medium-s-size {
+        width: mul($unit, 5);
+        height: mul($unit, 5);
+    }
+
+    &.--medium-size {
+        width: mul($unit, 6);
+        height: mul($unit, 6);
+    }
+
+    &.--large-size {
+        width: mul($unit, 8);
+        height: mul($unit, 8);
+    }
+}
