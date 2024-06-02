@@ -3770,11 +3770,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
       "projectName": "PropertyAgency.Domain",
       "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
       "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\obj\\",
+=======
+      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+      "projectName": "PropertyAgency.Domain",
+      "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/",
+>>>>>>> Nikita
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",

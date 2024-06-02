@@ -19,16 +19,14 @@ public class FavoritesRepository : IFavoritesRepository
         await _context.SaveChangesAsync();
         return entity;
     }
+    
 
-    public async Task<Favorite> GetById(Guid id)
+    public async Task<List<Favorite>> GetFavoritesByUserId(Guid userId)
     {
-        return await _context.Favorites.AsNoTracking().Include(e => e.Property).Include(e => e.User).FirstOrDefaultAsync(p => p.Id == id);
-
-    }
-
-    public async Task<List<Favorite>> Get()
-    {
-        return await _context.Favorites.AsNoTracking().Include(e => e.User).Include(e => e.Property).ToListAsync();
+        return await _context.Favorites.AsNoTracking()
+            .Include(e => e.Property)
+            .Where(f => f.UserId == userId)
+            .ToListAsync();
     }
 
     public async Task<bool> Delete(Guid id)

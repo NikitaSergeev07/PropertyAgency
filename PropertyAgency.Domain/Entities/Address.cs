@@ -10,6 +10,10 @@ public class Address
     public string Country { get; set; }
     public string ZipCode { get; set; }
 
-    public Guid PropertyId { get; set; }
-    public Property Property { get; set; }
+    public List<Property> Properties { get; set; }
+
+    public Address()
+    {
+        Properties = new List<Property>();
+    }
 }

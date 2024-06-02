@@ -20,10 +20,6 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Property>()
-            .HasOne(_ => _.User)
-            .WithMany(_ => _.Properties)
-            .HasForeignKey(_ => _.UserId);
 
         modelBuilder.Entity<Favorite>()
             .HasOne(_ => _.User)
@@ -35,9 +31,10 @@ public class ApplicationDbContext : DbContext
             .WithMany(_ => _.Favorites)
             .HasForeignKey(_ => _.PropertyId);
 
-        modelBuilder.Entity<Address>()
-            .HasOne(_ => _.Property)
-            .WithOne(_ => _.Address);
+        modelBuilder.Entity<Property>()
+            .HasOne(_ => _.Address)
+            .WithMany(_ => _.Properties)
+            .HasForeignKey(_ => _.AddressId);
         
         modelBuilder.Entity<Rental>()
             .HasOne(_ => _.User)

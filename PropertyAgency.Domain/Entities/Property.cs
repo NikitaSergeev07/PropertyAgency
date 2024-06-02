@@ -12,8 +12,7 @@ public class Property
     public int RoomCount { get; set; }
     public string Status { get; set; }
     
-    public Guid UserId { get; set; }
-    public User User { get; set; }
+    public Guid AddressId { get; set; }
     public Address Address { get; set; }
 
     public List<Favorite> Favorites { get; set; }

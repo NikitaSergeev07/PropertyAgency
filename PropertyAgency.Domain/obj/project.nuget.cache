@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "/YC/8ieaSf3lpSnT0Ooa/HqIqCXQ92zipnI7xqsYNEnEvOHy7JMxc4zr0mV+5oug+5dkomOElyWE99ifODq2Eg==",
   "success": true,
   "projectFilePath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
+=======
+  "dgSpecHash": "tYA3Q3KzuLXkDL8CVhARj3sh12dUvMeN2HgJ7NFhOaKkNo6ogKsXdBDxdF7sFUFBuwK46FwrsWayCNMT3G56pQ==",
+  "success": true,
+  "projectFilePath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+>>>>>>> Nikita
   "expectedPackageFiles": [
     "C:\\Users\\89169\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

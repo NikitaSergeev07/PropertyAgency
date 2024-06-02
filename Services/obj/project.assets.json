@@ -4175,11 +4175,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj",
       "projectName": "Services",
       "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\obj\\",
+=======
+      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
+      "projectName": "Services",
+      "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/obj/",
+>>>>>>> Nikita
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4197,11 +4205,19 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj": {
               "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj"
             },
             "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
               "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj"
+=======
+            "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
+              "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
+            },
+            "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+              "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+>>>>>>> Nikita
             }
           }
         }

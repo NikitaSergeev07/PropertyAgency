@@ -4520,11 +4520,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
       "projectName": "PropertyAgency.API",
       "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
       "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\obj\\",
+=======
+      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+      "projectName": "PropertyAgency.API",
+      "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+      "packagesPath": "/Users/mac/.nuget/packages/",
+      "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/obj/",
+>>>>>>> Nikita
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4542,8 +4550,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj": {
               "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj"
+=======
+            "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {
+              "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj"
+>>>>>>> Nikita
             }
           }
         }

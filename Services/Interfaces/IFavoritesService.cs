@@ -4,10 +4,8 @@ namespace Services.Interfaces;
 
 public interface IFavoritesService
 {
-
-    Task<Favorite> GetById(Guid id);
+    Task<List<Favorite>> GetFavoritesByUserId(Guid userId);
     Task<bool> DeleteFavorite(Guid id);
     Task<Favorite> CreateFavorite(Favorite entity);
-
-    Task<IEnumerable<Favorite>> GetFavorites();
+    
 }

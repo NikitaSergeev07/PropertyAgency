@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PropertyAgency.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc2523e6f8273a6031ea6a28b99f8ec634bb4730")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39604fda5298c84780230e6d87a2cec1ab92ede4")]
+>>>>>>> Nikita
 [assembly: System.Reflection.AssemblyProductAttribute("PropertyAgency.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PropertyAgency.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

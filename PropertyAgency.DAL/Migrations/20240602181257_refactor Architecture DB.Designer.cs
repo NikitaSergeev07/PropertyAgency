@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PropertyAgency.DAL;
 
@@ -10,9 +11,11 @@ using PropertyAgency.DAL;
 namespace PropertyAgency.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240602181257_refactor Architecture DB")]
+    partial class refactorArchitectureDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0-preview.4.24267.1");
@@ -31,6 +34,9 @@ namespace PropertyAgency.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("PropertyId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -44,6 +50,9 @@ namespace PropertyAgency.DAL.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PropertyId")
+                        .IsUnique();
 
                     b.ToTable("Addresses");
                 });
@@ -75,9 +84,6 @@ namespace PropertyAgency.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("AddressId")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -97,8 +103,6 @@ namespace PropertyAgency.DAL.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AddressId");
 
                     b.ToTable("Properties");
                 });
@@ -159,6 +163,17 @@ namespace PropertyAgency.DAL.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("PropertyAgency.Domain.Entities.Address", b =>
+                {
+                    b.HasOne("PropertyAgency.Domain.Entities.Property", "Property")
+                        .WithOne("Address")
+                        .HasForeignKey("PropertyAgency.Domain.Entities.Address", "PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Property");
+                });
+
             modelBuilder.Entity("PropertyAgency.Domain.Entities.Favorite", b =>
                 {
                     b.HasOne("PropertyAgency.Domain.Entities.Property", "Property")
@@ -176,17 +191,6 @@ namespace PropertyAgency.DAL.Migrations
                     b.Navigation("Property");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("PropertyAgency.Domain.Entities.Property", b =>
-                {
-                    b.HasOne("PropertyAgency.Domain.Entities.Address", "Address")
-                        .WithMany("Properties")
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("PropertyAgency.Domain.Entities.Rental", b =>
@@ -208,13 +212,11 @@ namespace PropertyAgency.DAL.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PropertyAgency.Domain.Entities.Address", b =>
-                {
-                    b.Navigation("Properties");
-                });
-
             modelBuilder.Entity("PropertyAgency.Domain.Entities.Property", b =>
                 {
+                    b.Navigation("Address")
+                        .IsRequired();
+
                     b.Navigation("Favorites");
 
                     b.Navigation("Rentals");

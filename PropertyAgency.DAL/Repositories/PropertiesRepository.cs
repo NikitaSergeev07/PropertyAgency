@@ -21,13 +21,13 @@ public class PropertiesRepository : IPropertiesRepository
 
     public async Task<Property> GetById(Guid id)
     {
-        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.User).Include(e => e.Favorites).Include(e => e.Address).FirstOrDefaultAsync(p => p.Id == id);
+        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.Favorites).Include(e => e.Address).FirstOrDefaultAsync(p => p.Id == id);
 
     }
 
     public async Task<List<Property>> Get()
     {
-        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.User).Include(e => e.Favorites).Include(e => e.Address).ToListAsync();
+        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.Favorites).Include(e => e.Address).ToListAsync();
     }
 
     public async Task<bool> Delete(Guid id)
@@ -40,7 +40,6 @@ public class PropertiesRepository : IPropertiesRepository
     {
         await _context.Properties
             .Where(p => p.Id == entity.Id)
-            .Include(e => e.User)
             .Include(e => e.Favorites)
             .Include(e => e.Address)
             .Include(e => e.Rentals)
@@ -50,7 +49,7 @@ public class PropertiesRepository : IPropertiesRepository
                 .SetProperty(p => p.Price, p => entity.Price)
                 .SetProperty(p => p.RoomCount, p => entity.RoomCount)
                 .SetProperty(p => p.Status, p => entity.Status)
-                .SetProperty(p => p.UserId, p => entity.UserId));
+                .SetProperty(p => p.AddressId, p => entity.AddressId));
         return true;
     }
 }
