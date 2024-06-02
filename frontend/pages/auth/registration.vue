@@ -166,7 +166,7 @@ const onSubmit = async () => {
 
     const { data, error } = await authRegister(actualValue.value);
 
-    if (data?.id) {
+    if (data?.createdUser?.id) {
         await fetchUser();
 
         return $router.push({ name: $routes.HOME });

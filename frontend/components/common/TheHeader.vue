@@ -28,6 +28,7 @@
                     </UiLink>
 
                     <UiButton
+                        v-if="!user?.id"
                         size="x-small"
                         color="custom"
                         :class="$style.button"
@@ -36,6 +37,29 @@
 
                         Войти
                     </UiButton>
+
+                    <QAvatar
+                        v-else
+                        color="primary"
+                        text-color="white"
+                        size="40px"
+                        font-size="16px"
+                        :class="$style.avatar"
+                    >
+                        {{ user?.userName[0] }}
+
+                        <QMenu :class="$style.avatarDropdown">
+                            <UiButton
+                                color="blue-5"
+                                size="x-small"
+                                flat
+                                :class="$style.logout"
+                                @click="onLogout"
+                            >
+                                Выйти
+                            </UiButton>
+                        </QMenu>
+                    </QAvatar>
                 </div>
             </div>
 
@@ -55,6 +79,9 @@
 </template>
 
 <script setup lang="ts">
+const { $router, $routes } = useNuxtApp();
+const { user, userLogout } = useCommonStore();
+
 const topNav = computed(() => [
     {
         id: 'favorite',
@@ -73,6 +100,14 @@ const bottomNav = computed(() => [
         name: 'Продажа',
     },
 ]);
+
+const onLogout = async () => {
+    const res = await userLogout();
+
+    if (res) {
+        $router.push({ name: $routes.LOGIN });
+    }
+};
 </script>
 
 <style lang="scss" module>
@@ -111,6 +146,10 @@ const bottomNav = computed(() => [
             align-items: center;
             column-gap: 12px;
         }
+    }
+
+    .avatar {
+        cursor: pointer;
     }
 
     .tooltipText {

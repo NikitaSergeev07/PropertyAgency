@@ -115,8 +115,6 @@ const onSubmit = async () => {
 
     const { data, error } = await authLogin(actualValue.value);
 
-    console.log(data);
-
     if (data?.message === 'success') {
         await fetchUser();
 

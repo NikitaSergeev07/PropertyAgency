@@ -23,6 +23,11 @@ export const useCommonStore = defineStore('common', () => {
      */
     const authLogin = async (payload: { email: string, password: string }) => await $request.$post('/login', payload);
     const authRegister = async (payload: { email: string, password: string }) => await $request.$post('/register', payload);
+    const userLogout = async () => {
+        const { data } = await $request.$post('/logout');
+
+        return data?.message === 'success';
+    };
 
     const changeAuthInformer = (val: boolean) => {
         showAuthInformer.value = val;
@@ -32,7 +37,7 @@ export const useCommonStore = defineStore('common', () => {
         const { data, error } = await $request.$get('/user');
 
         if (data) {
-            user.value = data;
+            user.value = data?.user;
             changeAuthInformer(false);
 
             return true;
@@ -47,6 +52,7 @@ export const useCommonStore = defineStore('common', () => {
         authLogin,
         authRegister,
         fetchUser,
+        userLogout,
         changeAuthInformer,
     };
 });
