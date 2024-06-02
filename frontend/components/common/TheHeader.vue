@@ -1,6 +1,6 @@
 <template>
     <header class="TheHeader">
-        <div :class="$style.wrapper">
+        <div :class="[$style.wrapper, 'container']">
             <div :class="$style.top">
                 <img
                     src="https://storage.yandexcloud.net/daily-flex/lian/logo.png"
@@ -48,12 +48,11 @@
                     >
                         {{ user?.userName[0] }}
 
-                        <QMenu :class="$style.avatarDropdown">
+                        <QMenu>
                             <UiButton
                                 color="blue-5"
                                 size="x-small"
                                 flat
-                                :class="$style.logout"
                                 @click="onLogout"
                             >
                                 Выйти
@@ -114,8 +113,6 @@ const onLogout = async () => {
     .wrapper {
         display: flex;
         flex-direction: column;
-        width: mul($unit, 344);
-        margin: 0 auto;
         padding: mul($unit, 4) 0;
         row-gap: mul($unit, 6);
         background-color: $white;
