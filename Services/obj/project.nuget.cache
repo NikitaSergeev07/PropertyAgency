@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "/OUdNNRlgkCepZBKNKQ0d9rz6O9n+hme6TcLaBo3prUFgz0pdOorLFBg+Joo8w6cleD3kjG+PI8HRgRWiQYV4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj",
-=======
-  "dgSpecHash": "8sF/LUVvO92CWLtTkO1sQlzNrtasPOj3XZb8dlt3D0x78/e0GCykYp283r3kXInngVFB7h9z3sAnTeWDuECyDw==",
-  "success": true,
-  "projectFilePath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
->>>>>>> Nikita
   "expectedPackageFiles": [
     "C:\\Users\\89169\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -89,5 +83,12 @@
     "C:\\Users\\89169\\.nuget\\packages\\system.text.json\\9.0.0-preview.4.24266.19\\system.text.json.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
         "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\obj\\",
-=======
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {}
-  },
-  "projects": {
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
-        "projectName": "PropertyAgency.API",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/obj/",
->>>>>>> Nikita
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,13 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj": {
                 "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj"
-=======
-              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj"
->>>>>>> Nikita
               }
             }
           }
@@ -130,7 +111,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -139,16 +119,6 @@
         "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj",
         "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.DAL\\obj\\",
-=======
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
-        "projectName": "PropertyAgency.DAL",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/obj/",
->>>>>>> Nikita
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -166,13 +136,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
                 "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj"
-=======
-              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
->>>>>>> Nikita
               }
             }
           }
@@ -254,7 +219,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -263,16 +227,6 @@
         "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
         "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\obj\\",
-=======
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
-        "projectName": "PropertyAgency.Domain",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/",
->>>>>>> Nikita
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -361,7 +315,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -370,16 +323,6 @@
         "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\obj\\",
-=======
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
-        "projectName": "Services",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/obj/",
->>>>>>> Nikita
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -397,19 +340,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj": {
                 "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj"
               },
               "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
                 "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj"
-=======
-              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
-              },
-              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
->>>>>>> Nikita
               }
             }
           }

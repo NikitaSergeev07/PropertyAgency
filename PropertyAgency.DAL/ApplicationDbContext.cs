@@ -14,6 +14,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Favorite> Favorites { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Rental> Rentals { get; set; }
+    public DbSet<Image> Images { get; set; }
 
     public DbSet<Transaction> Transactions { get; set; }
 
@@ -60,5 +61,9 @@ public class ApplicationDbContext : DbContext
             .HasOne(_ => _.Seller)
             .WithMany(_ => _.Transactions)
             .HasForeignKey(_ => _.SellerId);
+        modelBuilder.Entity<Image>()
+            .HasOne(_ => _.Property)
+            .WithMany(_ => _.Images)
+            .HasForeignKey(_ => _.PropertyId);
     }
 }
