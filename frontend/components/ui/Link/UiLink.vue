@@ -2,7 +2,6 @@
     <component
         :is="componentTag"
         v-bind="attrs"
-        :disabled="props.disabled"
         class="UiLink"
         :class="classList"
         @click="emit('click', $event)"
