@@ -1,31 +1,28 @@
 <template>
     <div class="IndexPage">
-        <PromoBanner/>
+        <div :class="$style.wrapper">
+            <PromoBanner/>
 
+            <PropertyBlock
+                v-if="propertyList.length"
+                :property-list="propertyList"
+            />
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import PromoBanner from '~/components/PromoBanner/PromoBanner.vue';
+import PropertyBlock from '~/components/Properties/PropertyBlock.vue';
 
-const { $request } = useNuxtApp();
-const { data } = useAsyncData('IndexPage', async () => {
-    try {
-        const { data } = await $request.$get('/Properties');
+const { propertyList } = storeToRefs(usePropertyStore());
+const { fetchPropertyList } = usePropertyStore();
 
-        if (data) {
-            return {
-                propertyList: data,
-            };
-        }
-    } catch (e) {
-        console.log('INDEX_PAGE:USE_ASYNC_DATA:', e);
-    }
-});
-
-const propertyList = ref(data.value?.propertyList || []);
+useAsyncData('IndexPage', async () => await fetchPropertyList());
 </script>
 
 <style lang="scss" module>
-
+    .wrapper {
+        width: 100%;
+    }
 </style>
