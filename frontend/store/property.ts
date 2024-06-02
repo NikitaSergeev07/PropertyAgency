@@ -5,19 +5,20 @@ interface AddToFavorite {
     propertyId: string;
 }
 
+interface FavoriteItemResponse {
+    property: Property;
+}
+
 export const usePropertyStore = defineStore('property', () => {
     const { $request } = useNuxtApp();
     const propertyList = ref<Property[]>([]);
+    const favoriteList = ref([]);
 
     const fetchPropertyList = async () => {
-        try {
-            const { data } = await $request.$get('/Properties');
+        const { data } = await $request.$get('/Properties');
 
-            if (data) {
-                propertyList.value = data;
-            }
-        } catch (e) {
-            console.log('PROPERTY_STORE:FETCH_PROPERTY_LIST:', e);
+        if (data) {
+            propertyList.value = data;
         }
     };
 
@@ -45,10 +46,27 @@ export const usePropertyStore = defineStore('property', () => {
         }
     };
 
+    const fetchFavoriteList = async () => {
+        const { data } = await $request.$get('/Favorites');
+
+        if (data && data.length) {
+            favoriteList.value = data.reduce((acc: any[], item: FavoriteItemResponse) => {
+                if (!acc.find(p => p.id === item.property.id)) {
+                    acc.push(item.property);
+                }
+
+                return acc;
+            }, []);
+        }
+    };
+
     return {
         propertyList,
         fetchPropertyList,
         addPropertyToFavorite,
         removePropertyFromFavorite,
+        // Favorite
+        favoriteList,
+        fetchFavoriteList,
     };
 });
