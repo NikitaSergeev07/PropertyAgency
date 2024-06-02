@@ -1,0 +1,101 @@
+/*
+** Grid
+*/
+
+$unit: 4px;
+$col: mul($unit, 10);
+
+/*
+** fonts
+*/
+
+//$base-font: 'Commissioner', sans-serif;
+$base-font: 'Golos Text', sans-serif;
+
+/*
+** Colors
+*/
+
+// Black
+$black: #14142b;
+
+// White
+$white: #fff;
+
+// Gray
+$gray-50: #f9fafb;
+$gray-100: #f2f4f7;
+$gray-200: #e4e7ec;
+$gray-300: #ced2da;
+$gray-400: #97a1af;
+$gray-500: #637083;
+$gray-600: #414e62;
+$gray-700: #344051;
+$gray-800: #202b37;
+$gray-900: #141c24;
+$gray-box-shadow: 0 0 0 2px $gray-200;
+
+// Primary
+$primary-additional-50: #cce0ff;
+$primary-50: #f0f6ff;
+$primary-100: #cce0ff;
+$primary-200: #99c2ff;
+$primary-300: #7fb2ff;
+$primary-400: #4c94ff;
+$primary-500: #1a75ff;
+$primary-600: #06f;
+$primary-700: #0052cc;
+$primary-800: #003d99;
+$primary-900: #002966;
+$primary-box-shadow: 0 0 0 2px $primary-200;
+
+// Info
+$info-50: #e5f4ff;
+$info-100: #cceaff;
+$info-200: #99d5ff;
+$info-300: #80c9ff;
+$info-400: #66bfff;
+$info-500: #33a9ff;
+$info-600: #06f;
+$info-700: #0095ff;
+$info-800: #005999;
+$info-900: #003b66;
+
+// Error
+$error-50: #fee7e7;
+$error-100: #fccfcf;
+$error-200: #fa9e9e;
+$error-300: #f98686;
+$error-400: #f98686;
+$error-500: #f64c4c;
+$error-600: #f20d0d;
+$error-700: #c20a0a;
+$error-800: #910808;
+$error-900: #610505;
+$error-box-shadow: 0 0 0 2px $error-200;
+
+// Warning
+$warning-50: #fff9eb;
+$warning-100: #fec;
+$warning-200: #fd9;
+$warning-300: #ffd480;
+$warning-400: #ffc34c;
+$warning-500: #ffb21a;
+$warning-600: #f5a300;
+$warning-700: #c80;
+$warning-800: #960;
+$warning-900: #640;
+
+// Success
+$success-50: #ecf9f2;
+$success-100: #d9f2e5;
+$success-200: #b3e5cc;
+$success-300: #9fdfbf;
+$success-400: #79d2a6;
+$success-500: #40bf7f;
+$success-600: #39ac73;
+$success-700: #309161;
+$success-800: #26734c;
+$success-900: #194d33;
+
+$border-radius: 8px;

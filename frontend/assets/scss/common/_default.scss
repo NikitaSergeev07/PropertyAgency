@@ -1,0 +1,105 @@
+@import "../shared/variables";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: normal;
+}
+
+body {
+    overflow-y: scroll;
+    font-family: $base-font;
+    color: $black;
+    user-select: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1128px;
+    margin: 0 auto;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.q-notification {
+    $notify: &;
+
+    box-shadow: none;
+
+    &--standard {
+        min-height: mul($unit, 9);
+    }
+
+    &__icon {
+        margin-right: mul($unit, 2);
+        font-size: mul($unit, 4);
+        color: $success-500;
+    }
+
+    &__message {
+        @include text-s;
+
+        font-weight: 500;
+    }
+
+    &.bg-positive {
+        background-color: $success-50 !important;
+        border: 1px solid $success-500;
+
+        #{$notify} {
+            &__message,
+            &__icon {
+                color: $success-500;
+            }
+
+            &__progress {
+                background-color: $success-500;
+                opacity: .48;
+            }
+        }
+    }
+
+    &.bg-negative {
+        background-color: $error-50 !important;
+        border: 1px solid $error-500;
+
+        #{$notify} {
+            &__message,
+            &__icon {
+                color: $error-500;
+            }
+
+            &__progress {
+                background-color: $error-500;
+                opacity: .48;
+            }
+        }
+    }
+
+    &.bg-info {
+        background-color: $primary-50 !important;
+        border: 1px solid $primary-500;
+
+        #{$notify} {
+            &__message,
+            &__icon {
+                color: $primary-500;
+            }
+
+            &__progress {
+                background-color: $primary-500;
+                opacity: .48;
+            }
+        }
+    }
+}

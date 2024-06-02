@@ -1,0 +1,10 @@
+@use "sass:math";
+@use "sass:list";
+
+@function div($first, $second) {
+    @return math.div($first, $second);
+}
+
+@function mul($first, $second) {
+    @return $first * $second;
+}

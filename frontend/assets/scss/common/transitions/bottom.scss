@@ -1,0 +1,21 @@
+.bottom-enter-from,
+.bottom-leave-to {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+}
+
+.bottom-fast-enter-from,
+.bottom-fast-leave-to {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+}
+
+.bottom-enter-active,
+.bottom-leave-active {
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.bottom-fast-enter-active,
+.bottom-fast-leave-active {
+    transition: opacity .2s ease, transform .2s ease;
+}

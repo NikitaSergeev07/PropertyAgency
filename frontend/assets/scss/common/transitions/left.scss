@@ -1,0 +1,29 @@
+.left-enter-active,
+.left-leave-active {
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.left-enter-from {
+    opacity: 0;
+    transform: translate3d(16px, 0, 0);
+}
+
+.left-leave-active {
+    opacity: 0;
+    transform: translate3d(-16px, 0, 0);
+}
+
+.left-fast-enter-active,
+.left-fast-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.left-fast-enter {
+    opacity: 0;
+    transform: translate3d(8px, 0, 0);
+}
+
+.left-fast-leave-active {
+    opacity: 0;
+    transform: translate3d(-8px, 0, 0);
+}

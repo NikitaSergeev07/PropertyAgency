@@ -1,0 +1,171 @@
+.UiLink {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border: none;
+    background: none;
+    user-select: none;
+    text-decoration: none;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &.--is-disabled {
+        pointer-events: none;
+    }
+
+    &.--primary-color {
+        color: $primary-500;
+
+        &.--is-interactive {
+            &:hover,
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                color: $primary-700;
+            }
+        }
+
+        &.--is-disabled {
+            color: $primary-100;
+        }
+    }
+
+    &.--primary-400-color {
+        color: $primary-400;
+
+        &.--is-interactive {
+            &:hover,
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                color: $primary-500;
+            }
+        }
+
+        &.--is-disabled {
+            color: $primary-100;
+        }
+    }
+
+    &.--gray-color {
+        color: $gray-400;
+
+        &.--is-interactive {
+            &:hover,
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                color: $white;
+            }
+        }
+
+        &.--is-disabled {
+            color: $gray-100;
+        }
+    }
+
+    &.--gray-500-color {
+        color: $gray-500;
+
+        &.--is-interactive {
+            &.--is-active {
+                color: $gray-900;
+            }
+
+            @include hover {
+                color: $gray-900;
+            }
+        }
+
+        &.--is-disabled {
+            color: $gray-100;
+        }
+    }
+
+    &.--white-color {
+        color: $white;
+
+        .UiIcon {
+            color: $white;
+        }
+
+        &.--is-interactive {
+            &:hover,
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                color: $primary-100;
+            }
+        }
+
+        &.--is-disabled {
+            opacity: .48;
+        }
+    }
+
+    &.--black-color {
+        color: $gray-900;
+
+        .UiIcon {
+            color: $primary-500;
+        }
+
+        &.--is-interactive {
+            &:hover,
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                color: $primary-500;
+            }
+        }
+
+        &.--is-disabled {
+            color: $gray-200;
+
+            .UiIcon {
+                color: $gray-300;
+            }
+        }
+    }
+
+    &.--error-color {
+        color: $error-500;
+
+        &.--is-interactive {
+            &:hover,
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                color: $error-300;
+            }
+        }
+
+        &.--is-disabled {
+            color: $error-100;
+        }
+    }
+
+    &.--small-size {
+        column-gap: $unit;
+        font-size: 12px;
+    }
+
+    &.--small-s-size {
+        column-gap: $unit;
+        font-size: 14px;
+    }
+
+    &.--medium-size {
+        column-gap: $unit * 2;
+        font-size: 16px;
+    }
+
+    &.--large-size {
+        column-gap: $unit * 2;
+        font-size: 20px;
+    }
+
+    &.--is-bold {
+        font-weight: 600;
+    }
+}

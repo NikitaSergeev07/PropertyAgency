@@ -1,0 +1,20 @@
+.fly-list-item {
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.fly-list-enter-from,
+.fly-list-leave-to {
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.fly-list-enter-active,
+.fly-list-leave-active {
+    position: absolute;
+}
+
+.fly-list-left-enter,
+.fly-list-left-leave-to {
+    opacity: 0;
+    transform: translateX(-10px);
+}

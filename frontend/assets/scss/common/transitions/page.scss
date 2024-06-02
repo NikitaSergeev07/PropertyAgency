@@ -1,0 +1,15 @@
+.page-enter-active,
+.page-leave-active {
+    transition: opacity .35s ease, transform .35s ease;
+}
+
+.page-enter-from {
+    opacity: 0;
+    transform: translate3d(-16px, 0, 0);
+    transition: opacity .35s ease .2s, transform .35s ease .2s;
+}
+
+.page-leave-to {
+    opacity: 0;
+    transform: translate3d(16px, 0, 0);
+}

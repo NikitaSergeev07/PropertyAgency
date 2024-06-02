@@ -1,0 +1,84 @@
+.UiFormCell {
+    position: relative;
+
+    $cell: &;
+
+    &.--is-small-size {
+        width: mul($unit, 78);
+    }
+
+    &.--is-medium-size {
+        width: mul($unit, 136);
+    }
+
+    &.--is-large-size {
+        width: mul($unit, 250);
+    }
+
+    &:not(.--is-custom-size) {
+        &>#{$cell} {
+            &__body {
+                &>* {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &.--is-required {
+
+        &>#{$cell} {
+            &__label {
+                position: relative;
+
+                &:after {
+                    content: '•';
+                    margin-top: mul($unit, -2);
+                    margin-left: div($unit, 2);
+                    font-size: mul($unit, 4);
+                    color: $error-500;
+                }
+            }
+        }
+    }
+
+    &__label {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: mul($unit, 2);
+        line-height: mul($unit, 4);
+        font-size: mul($unit, 3);
+        color: $gray-500;
+        user-select: none;
+
+        span {
+            padding-left: $unit;
+            color: $gray-500;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    &__info {
+        margin-top: mul($unit, 2);
+        font-size: mul($unit, 3);
+    }
+
+    &__success,
+    &__error {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        font-size: mul($unit, 3);
+        transition: all .3s ease;
+    }
+
+    &__success {
+        color: $success-500;
+    }
+}

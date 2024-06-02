@@ -1,0 +1,335 @@
+.UiButton {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    border: 1px solid transparent;
+    outline: none;
+    text-align: center;
+    font-weight: 600;
+    transition: all .3s ease;
+    cursor: pointer;
+    -webkit-appearance: none;
+    user-select: none;
+
+    $button: &;
+
+    &__preloader {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &.--is-loading {
+        pointer-events: none;
+    }
+
+    &.--small-size {
+        column-gap: $unit;
+        line-height: 22px;
+        font-size: 14px;
+
+        &.--is-simple,
+        &.--is-outline {
+            padding: 8px 24px;
+        }
+    }
+
+    &.--medium-size {
+        column-gap: $unit * 2;
+        line-height: 24px;
+        font-size: 16px;
+
+        &.--is-simple,
+        &.--is-outline {
+            padding: 12px 32px;
+        }
+    }
+
+    &.--large-size {
+        column-gap: $unit * 3;
+        line-height: 26px;
+        font-size: 16px;
+
+        &.--is-simple,
+        &.--is-outline {
+            padding: 15px 32px;
+        }
+    }
+
+    &.--is-rounded {
+        border-radius: mul($unit, 5);
+    }
+
+    &.--is-outline {
+        border-style: solid;
+        border-width: 1px;
+        background-color: transparent;
+    }
+
+    &.--is-disabled {
+        pointer-events: none;
+    }
+
+    &.--primary-color {
+        &.--is-simple {
+            background-color: $primary-500;
+            color: $white;
+
+            &.--is-active,
+            &.router-link-active {
+                background-color: $primary-700;
+            }
+
+            #{$button}__preloader {
+                background: $primary-500;
+            }
+
+            @include hover {
+                background-color: $primary-700;
+                color: $white;
+            }
+
+            &.--is-disabled {
+                background-color: $primary-additional-50;
+            }
+        }
+
+        &.--is-outline {
+            border-color: $primary-500;
+            color: $primary-500;
+
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact {
+                background-color: $primary-100;
+            }
+
+            #{$button}__preloader {
+                background: transparent;
+
+                .UiPreloader__loader {
+                    border-color: rgba($primary-500, .24);
+                    border-top-color: $primary-500;
+                }
+            }
+
+            &.--is-disabled {
+                border-color: $primary-100;
+                color: $primary-100;
+            }
+
+            @include hover {
+                background-color: $primary-100;
+            }
+        }
+
+        &:focus {
+            box-shadow: $primary-box-shadow;
+        }
+    }
+
+    &.--info-color {
+        //&.--is-simple {}
+
+        //&.--is-outline {}
+    }
+
+    &.--error-color {
+        &.--is-simple {
+            background-color: $error-500;
+            color: $white;
+
+            &.--is-active,
+            &.router-link-active {
+                background-color: $error-700;
+            }
+
+            #{$button}__preloader {
+                background: $error-500;
+            }
+
+            @include hover {
+                background-color: $error-700;
+                color: $white;
+            }
+
+            &.--is-disabled {
+                background-color: $error-100;
+            }
+        }
+
+        &.--is-outline {
+            border-color: $error-500;
+            color: $error-500;
+
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact {
+                background-color: $error-100;
+            }
+
+            #{$button}__preloader {
+                background: transparent;
+
+                .UiPreloader__loader {
+                    border-color: rgba($error-500, .24);
+                    border-top-color: $error-500;
+                }
+            }
+
+            &.--is-disabled {
+                border-color: $error-100;
+                color: $error-100;
+            }
+
+            @include hover {
+                background-color: $error-100;
+            }
+        }
+
+        &:focus {
+            box-shadow: $error-box-shadow;
+        }
+    }
+
+    &.--warning-color {
+        //&.--is-simple {}
+
+        //&.--is-outline {}
+    }
+
+    &.--success-color {
+        //&.--is-simple {}
+
+        //&.--is-outline {}
+    }
+
+    &.--white-color {
+        &.--is-simple {
+            background-color: $white;
+            color: $primary-500;
+
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                background-color: $primary-500;
+            }
+
+            #{$button}__preloader {
+                background: $white;
+            }
+
+            @include hover {
+                background-color: $primary-500;
+                color: $white;
+            }
+
+            &.--is-disabled {
+                background-color: $primary-additional-50;
+            }
+        }
+
+        &.--is-outline {
+            border-color: $primary-500;
+            color: $primary-500;
+
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact-active {
+                background-color: $primary-100;
+            }
+
+            #{$button}__preloader {
+                background: transparent;
+
+                .UiPreloader__loader {
+                    border-color: rgba($primary-500, .24);
+                    border-top-color: $primary-500;
+                }
+            }
+
+            &.--is-disabled {
+                border-color: $primary-100;
+                color: $primary-100;
+            }
+
+            @include hover {
+                background-color: $primary-100;
+            }
+        }
+
+        &:focus {
+            box-shadow: $primary-box-shadow;
+        }
+    }
+
+    &.--gray-color {
+        &.--is-simple {
+            background-color: $gray-100;
+            color: $gray-700;
+
+            &.--is-active,
+            &.router-link-active {
+                background-color: $gray-200;
+            }
+
+            #{$button}__preloader {
+                background: $gray-100;
+
+                .UiPreloader__loader {
+                    border-color: rgba($gray-500, .24);
+                    border-top-color: $gray-500;
+                }
+            }
+
+            @include hover {
+                background-color: $gray-200;
+            }
+
+            &.--is-disabled {
+                background-color: $gray-50;
+                color: $gray-400;
+            }
+        }
+
+        &.--is-outline {
+            border-color: $gray-300;
+            color: $gray-700;
+
+            &.--is-active,
+            &.router-link-active,
+            &.router-link-exact {
+                background-color: $gray-50;
+            }
+
+            #{$button}__preloader {
+                background: $white;
+
+                .UiPreloader__loader {
+                    border-color: rgba($gray-500, .24);
+                    border-top-color: $gray-500;
+                }
+            }
+
+            &.--is-disabled {
+                border-color: $gray-200;
+                color: $gray-400;
+            }
+
+            @include hover {
+                background-color: $gray-50;
+            }
+        }
+
+        &:focus {
+            box-shadow: $gray-box-shadow;
+        }
+    }
+}
+

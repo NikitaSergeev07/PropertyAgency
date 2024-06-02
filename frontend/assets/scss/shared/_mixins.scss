@@ -1,0 +1,64 @@
+@mixin hover {
+    @media (hover), (min-width: 0\0) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin primary-hover {
+    transition: all .3s ease;
+
+    @include hover {
+        border-color: $primary-400;
+        box-shadow: $primary-box-shadow;
+    }
+}
+
+@mixin text-xxs() {
+    // font-size: 10px;
+    line-height: 120%;
+    font-size: mul($unit, 2.5);
+}
+
+@mixin text-xs() {
+    // font-size: 12px;
+    line-height: 140%;
+    font-size: mul($unit, 3);
+}
+
+@mixin text-s() {
+    // font-size: 14px;
+    line-height: 128%;
+    font-size: mul($unit, 3.5);
+}
+
+@mixin text-m() {
+    // font-size: 16px;
+    line-height: 150%;
+    font-size: mul($unit, 4);
+}
+
+@mixin text-l() {
+    // font-size: 20px;
+    line-height: 160%;
+    font-size: mul($unit, 5);
+}
+
+@mixin text-xl() {
+    // font-size: 24px;
+    line-height: 133%;
+    font-size: mul($unit, 6);
+}
+
+@mixin text-xxl() {
+    // font-size: 28px;
+    line-height: 116%;
+    font-size: mul($unit, 7);
+}
+
+@mixin text-xxxl() {
+    // font-size: 32px;
+    line-height: 120%;
+    font-size: mul($unit, 8);
+}

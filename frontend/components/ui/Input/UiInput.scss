@@ -1,0 +1,176 @@
+.UiInput {
+    &.q-field {
+        $input: '.q-field';
+
+        &--outlined {
+            #{$input} {
+                &__control {
+                    &:after,
+                    &:before {
+                        content: none;
+                    }
+                }
+            }
+        }
+
+        &--dense {
+            #{$input} {
+                &__label {
+                    top: -12px;
+                }
+
+                &__append {
+                    position: absolute;
+                    right: 12px;
+                    padding-right: 10px;
+                }
+
+                &__control {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &__native {
+                    @include primary-hover;
+
+                    border-radius: $border-radius;
+                    border: 1px solid rgba(0, 0, 0, .24);
+
+                    &:focus {
+                        border-color: $primary-400;
+                        box-shadow: $primary-box-shadow;
+                    }
+                }
+            }
+        }
+
+        &--with-bottom {
+            padding: 0;
+        }
+
+        &--outlined {
+            #{$input} {
+                &__control {
+                    border-radius: $border-radius;
+                    padding: 0;
+                }
+            }
+        }
+
+        &--error {
+            #{$input} {
+                &__native {
+                    border-color: $error-400;
+
+                    @include hover {
+                        border-color: $error-400;
+                        box-shadow: $error-box-shadow;
+                    }
+
+                    &:focus {
+                        border-color: $error-400;
+                        box-shadow: $error-box-shadow;
+                    }
+                }
+            }
+        }
+
+        &.--xs-small-size {
+            &.q-field--labeled.q-field--dense {
+                #{$input} {
+                    &__native.UiInput__inputField {
+                        @include text-xs;
+
+                        padding: $unit mul($unit, 2);
+                    }
+                }
+            }
+
+            #{$input} {
+                &__control {
+                    height: mul($unit, 7);
+                }
+            }
+        }
+
+        &.--medium-size {
+            &.q-field--labeled.q-field--dense {
+                #{$input} {
+                    &__native.UiInput__inputField {
+                        @include text-s;
+
+                        padding: mul($unit, 2) mul($unit, 12) mul($unit, 2) mul($unit, 4);
+                    }
+                }
+            }
+
+            #{$input} {
+                &__control {
+                    height: mul($unit, 12);
+                }
+            }
+        }
+
+        &__bottom {
+            padding-left: 0;
+        }
+    }
+
+    &._isRequired {
+        .q-field__label {
+            color: $gray-500;
+
+            &:after {
+                content: '•';
+                margin-top: mul($unit, -2);
+                margin-left: div($unit, 2);
+                font-size: mul($unit, 4.75);
+                color: $error-500;
+            }
+        }
+    }
+
+    .q-icon {
+        font-size: mul($unit, 4);
+    }
+
+    input {
+        @include primary-hover;
+
+        border-radius: $border-radius;
+        border: 1px solid rgba(0, 0, 0, .24);
+
+        &:focus {
+            border-color: $primary-400;
+            box-shadow: $primary-box-shadow;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+
+    &.required {
+        :global(.q-field__label) {
+            color: $gray-500;
+
+            &:after {
+                content: '•';
+                margin-top: mul($unit, -2);
+                margin-left: div($unit, 2);
+                font-size: mul($unit, 4.75);
+                color: $error-500;
+            }
+        }
+    }
+
+    :global(.q-icon) {
+        font-size: mul($unit, 4);
+    }
+}

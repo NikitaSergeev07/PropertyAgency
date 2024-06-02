@@ -1,0 +1,332 @@
+@import "variables";
+
+$primary : $primary-500 !default;
+$secondary : $success-500 !default;
+$accent : #9C27B0 !default;
+
+$positive : $success-500 !default;
+$negative : $error-500 !default;
+$info : $info-500 !default;
+$warning : $warning-500 !default;
+
+$red : $error-100 !default;
+$red-1 : $error-50 !default;
+$red-2 : $error-100 !default;
+$red-3 : $error-200 !default;
+$red-4 : $error-300 !default;
+$red-5 : $error-400 !default;
+$red-6 : $error-500 !default;
+$red-7 : $error-500 !default;
+$red-8 : $error-600 !default;
+$red-9 : $error-600 !default;
+$red-10 : $error-700 !default;
+$red-11 : $error-500 !default;
+$red-12 : $error-600 !default;
+$red-13 : $error-800 !default;
+$red-14 : $error-900 !default;
+
+$pink : #e91e63 !default;
+$pink-1 : #fce4ec !default;
+$pink-2 : #f8bbd0 !default;
+$pink-3 : #f48fb1 !default;
+$pink-4 : #f06292 !default;
+$pink-5 : #ec407a !default;
+$pink-6 : #e91e63 !default;
+$pink-7 : #d81b60 !default;
+$pink-8 : #c2185b !default;
+$pink-9 : #ad1457 !default;
+$pink-10 : #880e4f !default;
+$pink-11 : #ff80ab !default;
+$pink-12 : #ff4081 !default;
+$pink-13 : #f50057 !default;
+$pink-14 : #c51162 !default;
+
+$purple : #9c27b0 !default;
+$purple-1 : #f3e5f5 !default;
+$purple-2 : #e1bee7 !default;
+$purple-3 : #ce93d8 !default;
+$purple-4 : #ba68c8 !default;
+$purple-5 : #ab47bc !default;
+$purple-6 : #9c27b0 !default;
+$purple-7 : #8e24aa !default;
+$purple-8 : #7b1fa2 !default;
+$purple-9 : #6a1b9a !default;
+$purple-10 : #4a148c !default;
+$purple-11 : #ea80fc !default;
+$purple-12 : #e040fb !default;
+$purple-13 : #d500f9 !default;
+$purple-14 : #aa00ff !default;
+
+
+$deep-purple : #673ab7 !default;
+$deep-purple-1 : #ede7f6 !default;
+$deep-purple-2 : #d1c4e9 !default;
+$deep-purple-3 : #b39ddb !default;
+$deep-purple-4 : #9575cd !default;
+$deep-purple-5 : #7e57c2 !default;
+$deep-purple-6 : #673ab7 !default;
+$deep-purple-7 : #5e35b1 !default;
+$deep-purple-8 : #512da8 !default;
+$deep-purple-9 : #4527a0 !default;
+$deep-purple-10 : #311b92 !default;
+$deep-purple-11 : #b388ff !default;
+$deep-purple-12 : #7c4dff !default;
+$deep-purple-13 : #651fff !default;
+$deep-purple-14 : #6200ea !default;
+
+
+$indigo : #3f51b5 !default;
+$indigo-1 : #e8eaf6 !default;
+$indigo-2 : #c5cae9 !default;
+$indigo-3 : #9fa8da !default;
+$indigo-4 : #7986cb !default;
+$indigo-5 : #5c6bc0 !default;
+$indigo-6 : #3f51b5 !default;
+$indigo-7 : #3949ab !default;
+$indigo-8 : #303f9f !default;
+$indigo-9 : #283593 !default;
+$indigo-10 : #1a237e !default;
+$indigo-11 : #8c9eff !default;
+$indigo-12 : #536dfe !default;
+$indigo-13 : #3d5afe !default;
+$indigo-14 : #304ffe !default;
+
+$blue : $primary-50 !default;
+$blue-1 : $primary-additional-50 !default;
+$blue-2 : $primary-100 !default;
+$blue-3 : $primary-200 !default;
+$blue-4 : $primary-300 !default;
+$blue-5 : $primary-400 !default;
+$blue-6 : $primary-500 !default;
+$blue-7 : $primary-600 !default;
+$blue-8 : $primary-700 !default;
+$blue-9 : $primary-800 !default;
+$blue-10 : $primary-900 !default;
+$blue-11 : $primary-200 !default;
+$blue-12 : $primary-300 !default;
+$blue-13 : $primary-500 !default;
+$blue-14 : $primary-600 !default;
+
+$light-blue : #03a9f4 !default;
+$light-blue-1 : $info-50 !default;
+$light-blue-2 : $info-100 !default;
+$light-blue-3 : $info-200 !default;
+$light-blue-4 : $info-300 !default;
+$light-blue-5 : $info-400 !default;
+$light-blue-6 : $info-500 !default;
+$light-blue-7 : $info-600 !default;
+$light-blue-8 : $info-700 !default;
+$light-blue-9 : $info-800 !default;
+$light-blue-10 : $info-900 !default;
+$light-blue-11 : $info-200 !default;
+$light-blue-12 : $info-300 !default;
+$light-blue-13 : $info-400 !default;
+$light-blue-14 : $info-500 !default;
+
+$cyan : #00bcd4 !default;
+$cyan-1 : #ebfaf7 !default;
+$cyan-2 : #d6f5f0 !default;
+$cyan-3 : #adebe0 !default;
+$cyan-4 : #99e6d9 !default;
+$cyan-5 : #85e0d1 !default;
+$cyan-6 : #33ccb2 !default;
+$cyan-7 : #2eb8a1 !default;
+$cyan-8 : #29a38f !default;
+$cyan-9 : #0b8e78 !default;
+$cyan-10 : #145247 !default;
+$cyan-11 : #84ffff !default;
+$cyan-12 : #18ffff !default;
+$cyan-13 : #00e5ff !default;
+$cyan-14 : #00b8d4 !default;
+
+$teal : #99e6d9 !default;
+$teal-1 : #e0f2f1 !default;
+$teal-2 : #ebfaf7 !default;
+$teal-3 : #d6f5f0 !default;
+$teal-4 : #adebe0 !default;
+$teal-5 : #99e6d9 !default;
+$teal-6 : #85e0d1 !default;
+$teal-7 : #33ccb2 !default;
+$teal-8 : #2eb8a1 !default;
+$teal-9 : #29a38f !default;
+$teal-10 : #0b8e78 !default;
+$teal-11 : $teal-10 !default;
+$teal-12 : $teal-6 !default;
+$teal-13 : $teal-7 !default;
+$teal-14 : $teal-8 !default;
+
+$green : #4caf50 !default;
+$green-1 : #e8f5e9 !default;
+$green-2 : #c8e6c9 !default;
+$green-3 : #a5d6a7 !default;
+$green-4 : #81c784 !default;
+$green-5 : #66bb6a !default;
+$green-6 : #4caf50 !default;
+$green-7 : #43a047 !default;
+$green-8 : #388e3c !default;
+$green-9 : #2e7d32 !default;
+$green-10 : #1b5e20 !default;
+$green-11 : #b9f6ca !default;
+$green-12 : #69f0ae !default;
+$green-13 : #00e676 !default;
+$green-14 : #00c853 !default;
+
+$light-green : #8bc34a !default;
+$light-green-1 : #f1f8e9 !default;
+$light-green-2 : #dcedc8 !default;
+$light-green-3 : #c5e1a5 !default;
+$light-green-4 : #aed581 !default;
+$light-green-5 : #9ccc65 !default;
+$light-green-6 : #8bc34a !default;
+$light-green-7 : #7cb342 !default;
+$light-green-8 : #689f38 !default;
+$light-green-9 : #558b2f !default;
+$light-green-10 : #33691e !default;
+$light-green-11 : #ccff90 !default;
+$light-green-12 : #b2ff59 !default;
+$light-green-13 : #76ff03 !default;
+$light-green-14 : #64dd17 !default;
+
+$lime : #cddc39 !default;
+$lime-1 : #f9fbe7 !default;
+$lime-2 : #f0f4c3 !default;
+$lime-3 : #e6ee9c !default;
+$lime-4 : #dce775 !default;
+$lime-5 : #d4e157 !default;
+$lime-6 : #cddc39 !default;
+$lime-7 : #c0ca33 !default;
+$lime-8 : #afb42b !default;
+$lime-9 : #9e9d24 !default;
+$lime-10 : #827717 !default;
+$lime-11 : #f4ff81 !default;
+$lime-12 : #eeff41 !default;
+$lime-13 : #c6ff00 !default;
+$lime-14 : #aeea00 !default;
+
+$yellow : #ffeb3b !default;
+$yellow-1 : #fffde7 !default;
+$yellow-2 : #fff9c4 !default;
+$yellow-3 : #fff59d !default;
+$yellow-4 : #fff176 !default;
+$yellow-5 : #ffee58 !default;
+$yellow-6 : #ffeb3b !default;
+$yellow-7 : #fdd835 !default;
+$yellow-8 : #fbc02d !default;
+$yellow-9 : #f9a825 !default;
+$yellow-10 : #f57f17 !default;
+$yellow-11 : #ffff8d !default;
+$yellow-12 : #ffff00 !default;
+$yellow-13 : #ffea00 !default;
+$yellow-14 : #ffd600 !default;
+
+$amber : #ffc107 !default;
+$amber-1 : #fff8e1 !default;
+$amber-2 : #ffecb3 !default;
+$amber-3 : #ffe082 !default;
+$amber-4 : #ffd54f !default;
+$amber-5 : #ffca28 !default;
+$amber-6 : #ffc107 !default;
+$amber-7 : #ffb300 !default;
+$amber-8 : #ffa000 !default;
+$amber-9 : #ff8f00 !default;
+$amber-10 : #ff6f00 !default;
+$amber-11 : #ffe57f !default;
+$amber-12 : #ffd740 !default;
+$amber-13 : #ffc400 !default;
+$amber-14 : #ffab00 !default;
+
+$orange : #ffb21a !default;
+$orange-1 : #fff9eb !default;
+$orange-2 : #fec !default;
+$orange-3 : #fd9 !default;
+$orange-4 : #ffd480 !default;
+$orange-5 : #ffc34c !default;
+$orange-6 : #ffb21a !default;
+$orange-7 : #f5a300 !default;
+$orange-8 : #c80 !default;
+$orange-9 : #960 !default;
+$orange-10 : #640 !default;
+$orange-11 : $orange-4 !default;
+$orange-12 : $orange-6 !default;
+$orange-13 : $orange-7 !default;
+$orange-14 : $orange !default;
+
+$deep-orange : #ff5722 !default;
+$deep-orange-1 : #fbe9e7 !default;
+$deep-orange-2 : #ffccbc !default;
+$deep-orange-3 : #ffab91 !default;
+$deep-orange-4 : #ff8a65 !default;
+$deep-orange-5 : #ff7043 !default;
+$deep-orange-6 : #ff5722 !default;
+$deep-orange-7 : #f4511e !default;
+$deep-orange-8 : #e64a19 !default;
+$deep-orange-9 : #d84315 !default;
+$deep-orange-10 : #bf360c !default;
+$deep-orange-11 : #ff9e80 !default;
+$deep-orange-12 : #ff6e40 !default;
+$deep-orange-13 : #ff3d00 !default;
+$deep-orange-14 : #dd2c00 !default;
+
+$brown : #795548 !default;
+$brown-1 : #efebe9 !default;
+$brown-2 : #d7ccc8 !default;
+$brown-3 : #bcaaa4 !default;
+$brown-4 : #a1887f !default;
+$brown-5 : #8d6e63 !default;
+$brown-6 : #795548 !default;
+$brown-7 : #6d4c41 !default;
+$brown-8 : #5d4037 !default;
+$brown-9 : #4e342e !default;
+$brown-10 : #3e2723 !default;
+$brown-11 : #d7ccc8 !default;
+$brown-12 : #bcaaa4 !default;
+$brown-13 : #8d6e63 !default;
+$brown-14 : #5d4037 !default;
+
+$grey : $gray-400 !default;
+$grey-1 : $gray-50 !default;
+$grey-2 : $gray-100 !default;
+$grey-3 : $gray-200 !default;
+$grey-4 : $gray-300 !default;
+$grey-5 : $gray-400 !default;
+$grey-6 : $gray-500 !default;
+$grey-7 : $gray-600 !default;
+$grey-8 : $gray-700 !default;
+$grey-9 : $gray-800 !default;
+$grey-10 : $gray-900 !default;
+$grey-11 : $gray-100 !default;
+$grey-12 : $gray-200 !default;
+$grey-13 : $gray-300 !default;
+$grey-14 : $gray-500 !default;
+
+$blue-grey : #607d8b !default;
+$blue-grey-1 : #eceff1 !default;
+$blue-grey-2 : #cfd8dc !default;
+$blue-grey-3 : #b0bec5 !default;
+$blue-grey-4 : #90a4ae !default;
+$blue-grey-5 : #78909c !default;
+$blue-grey-6 : #607d8b !default;
+$blue-grey-7 : #546e7a !default;
+$blue-grey-8 : #455a64 !default;
+$blue-grey-9 : #37474f !default;
+$blue-grey-10 : #263238 !default;
+$blue-grey-11 : #cfd8dc !default;
+$blue-grey-12 : #b0bec5 !default;
+$blue-grey-13 : #78909c !default;
+$blue-grey-14 : #455a64 !default;
+
+
+
+/** customization */
+
+
+/** BUTTONS */
+$button-font-size: 14px !default;
+$button-border-radius: $border-radius !default;
+$button-font-weight: 600 !default;
+$button-padding: 8px 24px !default;
+$button-font-size: 14px;
+
+.q-btn {
+  text-transform: none;
+}

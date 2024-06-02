@@ -1,0 +1,28 @@
+h1 {
+    @include text-xxxl;
+}
+
+h2 {
+    @include text-xxl;
+}
+
+h3 {
+    @include text-xl;
+}
+
+h4 {
+    @include text-l;
+}
+
+h5 {
+    @include text-m;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
