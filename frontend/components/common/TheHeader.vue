@@ -134,7 +134,7 @@ const onLogout = async () => {
     .list {
         display: flex;
         align-items: center;
-        column-gap: mul($unit, 4);
+        column-gap: mul($unit, 8);
         margin-left: auto;
     }
 
