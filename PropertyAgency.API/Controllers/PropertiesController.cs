@@ -23,7 +23,7 @@ public class PropertiesController : ControllerBase
         result.Price = payload.Price;
         result.RoomCount = payload.RoomCount;
         result.Status = payload.Status;
-        result.UserId = payload.UserId;
+        result.AddressId = payload.AddressId;
         return result;
     }
     

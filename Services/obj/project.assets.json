@@ -4175,11 +4175,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj",
+      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
       "projectName": "Services",
-      "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj",
+      "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
       "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/obj/",
+      "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -4194,11 +4194,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
-              "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
+            "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
+              "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
             },
-            "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-              "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+            "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+              "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
             }
           }
         }

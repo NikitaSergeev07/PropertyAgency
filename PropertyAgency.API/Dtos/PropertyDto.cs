@@ -10,6 +10,6 @@ public class PropertyDto
     public decimal Price { get; set; }
     public int RoomCount { get; set; }
     public string Status { get; set; }
-    public Guid UserId { get; set; }
-    public List<FavoriteDto> Favorites { get; set; } = new List<FavoriteDto>();
+    
+    public Guid AddressId { get; set; }
 }

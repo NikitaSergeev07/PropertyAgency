@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JoFzHeS2jNcJlf+1tohh39wPqcBuMRiJFAb+qv9dfGrWKTyZ3Sb9iy7vF3pT2nPTRKuvp/rX9QDAvZYzCgVM7w==",
+  "dgSpecHash": "8sF/LUVvO92CWLtTkO1sQlzNrtasPOj3XZb8dlt3D0x78/e0GCykYp283r3kXInngVFB7h9z3sAnTeWDuECyDw==",
   "success": true,
-  "projectFilePath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj",
+  "projectFilePath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
   "expectedPackageFiles": [
     "/Users/mac/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/mac/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {}
+    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {}
   },
   "projects": {
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
         "projectName": "PropertyAgency.Domain",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/obj/",
+        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"

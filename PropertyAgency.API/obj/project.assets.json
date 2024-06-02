@@ -4520,11 +4520,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
       "projectName": "PropertyAgency.API",
-      "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+      "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
       "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/obj/",
+      "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -4539,8 +4539,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj": {
-              "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj"
+            "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {
+              "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj"
             }
           }
         }

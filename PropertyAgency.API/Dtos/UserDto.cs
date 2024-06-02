@@ -4,11 +4,9 @@ namespace PropertyAgency.API.Dtos;
 
 public class UserDto
 {
-    public string UserName { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
+    public string UserName { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; } 
     public TypeRole Role { get; set; }
 
-    public List<PropertyDto> Properties { get; set; } = new List<PropertyDto>();
-    public List<FavoriteDto> Favorites { get; set; } = new List<FavoriteDto>();
 }

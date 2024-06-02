@@ -10,6 +10,5 @@ public interface IAddressesService
     Task<bool> DeleteAddress(Guid id);
     Task<Address> CreateAddress(Address entity);
     Task<bool> UpdateAddress(Address entity);
-    Task<Address> GetByPropertyId(Guid propertyId);
     
 }

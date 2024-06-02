@@ -15,15 +15,9 @@ public class FavoritesService : IFavoritesService
         _propertiesRepository = propertiesRepository;
     }
     
-    public async Task<IEnumerable<Favorite>> GetFavorites()
+    public async Task<List<Favorite>> GetFavoritesByUserId(Guid userId)
     {
-        var favorites = await _favoritesRepository.Get();
-        return favorites;
-    }
-
-    public async Task<Favorite> GetById(Guid id)
-    {
-        return await _favoritesRepository.GetById(id);
+        return await _favoritesRepository.GetFavoritesByUserId(userId);
     }
 
     public async Task<bool> DeleteFavorite(Guid id)
@@ -33,16 +27,7 @@ public class FavoritesService : IFavoritesService
 
     public async Task<Favorite> CreateFavorite(Favorite entity)
     {
-        var property = await _propertiesRepository.GetById(entity.PropertyId);
-        if (property == null || property.UserId != entity.UserId)
-        {
-            throw new InvalidOperationException("Объект не принадлежит этому пользователю");
-        }
-
         return await _favoritesRepository.Create(entity);
     }
-    
-
-    
     
 }

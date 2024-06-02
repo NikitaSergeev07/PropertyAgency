@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {}
+    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {}
   },
   "projects": {
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {
+    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
         "projectName": "PropertyAgency.API",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/obj/",
+        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj"
+              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {
+                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj"
               }
             }
           }
@@ -108,14 +108,14 @@
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
+    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
+        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
         "projectName": "PropertyAgency.DAL",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
+        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/",
+        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -130,8 +130,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
               }
             }
           }
@@ -213,14 +213,14 @@
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
         "projectName": "PropertyAgency.Domain",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/obj/",
+        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -306,14 +306,14 @@
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj": {
+    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj",
+        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
         "projectName": "Services",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj",
+        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/obj/",
+        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -328,11 +328,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
+              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
+                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
               },
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
               }
             }
           }

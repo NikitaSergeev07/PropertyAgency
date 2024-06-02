@@ -24,7 +24,6 @@ namespace PropertyAgency.DAL.Repositories
         {
             return await _context.Users
                 .AsNoTracking()
-                .Include(u => u.Properties)
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
                 .Where(u => u.Id == id)
@@ -35,7 +34,6 @@ namespace PropertyAgency.DAL.Repositories
         {
             return await _context.Users
                 .AsNoTracking()
-                .Include(u => u.Properties)
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
                 .ToListAsync();
@@ -45,7 +43,6 @@ namespace PropertyAgency.DAL.Repositories
         {
             await _context.Users
                 .Where(u => u.Id == id)
-                .Include(u => u.Properties)
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
                 .ExecuteDeleteAsync();
@@ -57,7 +54,6 @@ namespace PropertyAgency.DAL.Repositories
             await _context.Users
                 .Where(u => u.Id == entity.Id)
                 .Include(u => u.Favorites)
-                .Include(u => u.Properties)
                 .Include(u => u.Rentals)
                 .ExecuteUpdateAsync(s => s
                     .SetProperty(u => u.UserName, entity.UserName)
@@ -71,20 +67,10 @@ namespace PropertyAgency.DAL.Repositories
         {
             return await _context.Users
                 .AsNoTracking()
-                .Include(u => u.Properties)
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
                 .FirstOrDefaultAsync(u => u.Email == email);
         }
         
-        public async Task<List<Favorite>> GetFavoritesForUser(Guid userId)
-        {
-            var user = await _context.Users.AsNoTracking()
-                .Include(u => u.Properties)
-                .Include(u => u.Favorites)
-                .Include(u => u.Rentals)
-                .FirstOrDefaultAsync(u => u.Id == userId);
-            return user.Favorites;
-        }
     }
 }
