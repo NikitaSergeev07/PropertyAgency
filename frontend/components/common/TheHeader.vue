@@ -13,6 +13,7 @@
                     <UiLink
                         v-for="item in topNav"
                         :key="item.id"
+                        :to="item.url"
                         bold
                         color="gray-500"
                     >
@@ -86,6 +87,7 @@ const topNav = computed(() => [
         id: 'favorite',
         iconName: 'favorite',
         tooltipText: 'Избранное',
+        url: { name: $routes.FAVORITES },
     },
 ]);
 
