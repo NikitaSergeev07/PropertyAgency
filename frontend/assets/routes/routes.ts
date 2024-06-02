@@ -1,5 +1,4 @@
 // Routes
-
 export const routes = {
     HOME: 'index',
     AUTH: 'auth',
@@ -7,6 +6,7 @@ export const routes = {
     REGISTRATION: 'registration',
     FLAT_LIST: 'flat-list',
     FLAT_DETAIL: 'flat-id-index',
+    FAVORITES: 'favorites',
 };
 
 export type RoutesType = typeof routes
