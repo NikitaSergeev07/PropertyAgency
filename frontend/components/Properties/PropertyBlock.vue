@@ -19,8 +19,6 @@
                     />
                 </li>
             </ul>
-
-            <pre>{{ favoriteDict }}</pre>
         </div>
     </div>
 </template>
