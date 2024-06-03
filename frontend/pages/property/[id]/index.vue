@@ -49,7 +49,7 @@
 
                     <div :class="$style.bottom">
                         <UiButton
-                            v-if="propertyDetail.status"
+                            v-if="PROPERTY_STATUS_DISPLAY[propertyDetail.status]"
                             color="grey-4"
                             :class="$style.button"
                         >
