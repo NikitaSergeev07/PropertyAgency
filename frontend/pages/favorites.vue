@@ -9,7 +9,7 @@
             <PropertyBlock
                 v-else
                 :property-list="data.propertyList"
-                :favorites="data.favorites"
+                :favorites="data.favorites as any"
             />
         </div>
     </div>

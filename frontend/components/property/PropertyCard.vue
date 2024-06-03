@@ -26,6 +26,10 @@
                     {{ title }}
                 </h4>
 
+                <h6 v-if="price" :class="$style.price">
+                    {{ splitThousands(price) }} ₽
+                </h6>
+
                 <h6 :class="$style.flat">
                     <span>{{ roomCount === 0 ? 'Студия' : 'Квартира' }}</span>
                     <span v-if="roomCount">{{ roomCount }}-комнатная</span>
@@ -42,6 +46,7 @@
 </template>
 
 <script setup lang="ts">
+import { splitThousands } from '../../assets/ts/utils/numbers';
 import type { PropertyAddress } from 'assets/types/property';
 
 const emit = defineEmits([
@@ -140,13 +145,17 @@ const classList = computed(() => [
         transition: color .3s ease;
     }
 
+    .price,
     .flat {
         @include text-m;
 
+        font-weight: 500;
+    }
+
+    .flat {
         display: flex;
         align-items: center;
         column-gap: mul($unit, 2);
-        font-weight: 500;
 
         span {
             &:last-of-type {
