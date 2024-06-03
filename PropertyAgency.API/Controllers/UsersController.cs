@@ -23,17 +23,6 @@ public class UsersController : ControllerBase
         result.Email = payload.Email;
         result.Password = payload.Password;
         result.Role = payload.Role;
-        result.Properties = new List<Property>();
-        payload.Properties.ForEach(p =>
-        {
-            var newProperty = new Property();
-            newProperty.Title = p.Title;
-            newProperty.Description = p.Description;
-            newProperty.Price = p.Price;
-            newProperty.RoomCount = p.RoomCount;
-            newProperty.Status = p.Status;
-            result.Properties.Add(newProperty);
-        });
         return result;
     }
     
@@ -87,11 +76,5 @@ public class UsersController : ControllerBase
     
     }
     
-    [HttpGet("list_favorites/{{id}}")]
-    public async Task<IActionResult> GetFavoritesForUser(Guid id)
-    {
-        var favorites = _usersService.GetFavoritsForUser(id);
-        return Ok(favorites);
-    }
     
 }

@@ -13,6 +13,7 @@
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.genruntimeconfig.cache
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.csproj.AssemblyReference.cache
 /Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.sourcelink.json
+<<<<<<< HEAD
 C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.Domain\bin\Debug\net8.0\PropertyAgency.Domain.deps.json
 C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.Domain\bin\Debug\net8.0\PropertyAgency.Domain.runtimeconfig.json
 C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.Domain\bin\Debug\net8.0\PropertyAgency.Domain.dll
@@ -28,3 +29,20 @@ C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAg
 C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.Domain\obj\Debug\net8.0\PropertyAgency.Domain.pdb
 C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.Domain\obj\Debug\net8.0\PropertyAgency.Domain.genruntimeconfig.cache
 C:\Users\89169\OneDrive\Рабочий стол\GitHub\PropertyAgency\PropertyAgency.Domain\obj\Debug\net8.0\ref\PropertyAgency.Domain.dll
+=======
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/bin/Debug/net8.0/PropertyAgency.Domain.deps.json
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/bin/Debug/net8.0/PropertyAgency.Domain.runtimeconfig.json
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/bin/Debug/net8.0/PropertyAgency.Domain.dll
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/bin/Debug/net8.0/PropertyAgency.Domain.pdb
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.csproj.AssemblyReference.cache
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.AssemblyInfoInputs.cache
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.AssemblyInfo.cs
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.csproj.CoreCompileInputs.cache
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.sourcelink.json
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.dll
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/refint/PropertyAgency.Domain.dll
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.pdb
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/PropertyAgency.Domain.genruntimeconfig.cache
+/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/Debug/net8.0/ref/PropertyAgency.Domain.dll
+>>>>>>> Nikita
