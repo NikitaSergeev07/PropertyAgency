@@ -17,12 +17,8 @@
                         @add-favorite="addToFavorite(property.id)"
                         @remove-favorite="removeFromFavorite(property.id)"
                     />
-
-                    <pre>{{ property.id }}</pre>
                 </li>
             </ul>
-
-            <pre>{{ favoritesDict }}</pre>
         </div>
     </div>
 </template>

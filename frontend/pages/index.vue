@@ -5,46 +5,50 @@
 
             <PropertyBlock
                 v-if="data?.propertyList?.length"
-                :property-list="data.propertyList"
-                :favorites="data.favorites"
+                v-bind="data"
             />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import type { Favorites } from '~/assets/types/property';
+
 import PromoBanner from '~/components/PromoBanner/PromoBanner.vue';
 import PropertyBlock from '~/components/Properties/PropertyBlock.vue';
 
-const { fetchPropertyList, fetchFavoriteList } = usePropertyStore();
+const { fetchPropertyList } = usePropertyStore();
 
 const { data } = useAsyncData('IndexPage', async () => {
     /**
-     * Отправляем запрос за списком квартир и списком квартир которые в избранном
+     * Отправляем запрос за списком квартир
      */
-    const [
-        propertyList,
-        favorites,
-    ] = await Promise.all([
-        fetchPropertyList(),
-        fetchFavoriteList(),
-    ]);
-
-    let favoritesDict = {};
+    const propertyList = await fetchPropertyList();
 
     /**
-     * Проверяем список избранных на наличие
-     * Если список не пустой, то перебираем массив и формируем объект
+     * Вспомогательная функуция для обработки массива favorites у каждой сущности Property
+     */
+    const getFavoritesDictFromProperty = (favorites: Favorites[]) => {
+        if (!favorites?.length) {
+            return {};
+        }
+
+        return favorites.reduce((acc, item) => ({
+            ...acc,
+            [item.propertyId]: item.id,
+        }), {});
+    };
+
+    /**
+     * Формируем объект квартир, которые были добавлены в избранное
      * Где ключ - это ID квартиры, а значение это ID Favorite
      */
-    if (favorites && favorites.length) {
-        favoritesDict = favorites?.reduce((acc: string[], item: any) => ({
-            ...acc,
-            ...item?.propertyId && {
-                [item.propertyId]: item.id,
-            },
-        }), {});
-    }
+    const favoritesDict = propertyList?.reduce((acc: string[], property: any) => ({
+        ...acc,
+        ...property?.favorites?.length
+            ? getFavoritesDictFromProperty(property.favorites)
+            : [],
+    }), {});
 
     return {
         propertyList,
