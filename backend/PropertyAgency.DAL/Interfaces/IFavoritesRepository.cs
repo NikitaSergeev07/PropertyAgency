@@ -4,8 +4,7 @@ namespace PropertyAgency.DAL.Interfaces;
 
 public interface IFavoritesRepository
 {
-    Task<Favorite> Create(Favorite entity);
-    Task<Favorite> GetById(Guid id);
-    Task<List<Favorite>> Get();
+    Task<Guid> Create(Favorite entity);
+    Task<List<Favorite>> GetFavoritesByUserId(Guid userId);
     Task<bool> Delete(Guid id);
 }

@@ -2,13 +2,14 @@
     <div class="FavoritesPage">
         <div :class="$style.wrapper">
             <FavoritesEmpty
-                v-if="!favoriteList.length"
+                v-if="!data?.propertyList?.length"
                 :class="$style.empty"
             />
 
             <PropertyBlock
                 v-else
-                :property-list="favoriteList"
+                :property-list="data.propertyList"
+                :favorites="data.favorites"
             />
         </div>
     </div>
@@ -18,10 +19,50 @@
 import FavoritesEmpty from '~/components/favorites/FavoritesEmpty.vue';
 import PropertyBlock from '~/components/Properties/PropertyBlock.vue';
 
-const { favoriteList } = storeToRefs(usePropertyStore());
 const { fetchFavoriteList } = usePropertyStore();
 
-useAsyncData('FavoritePage', async () => await fetchFavoriteList());
+const { data } = useAsyncData('FavoritePage', async () => {
+    /**
+     * Отправляем запрос за списком квартир которые в избранном
+     */
+    const favorites = await fetchFavoriteList();
+
+    if (!favorites && !favorites.length) {
+        return {
+            propertyList: [],
+            favorites: {},
+        };
+    }
+
+    let list = [];
+    let favoritesDict = {};
+
+    /**
+     * Проверяем список избранных на наличие
+     * Если список не пустой, то перебираем массив и формируем объект
+     * Где ключ - это ID квартиры, а значение это ID Favorite
+     * А так же в одном переборе формируем список квартир для отображения на странице
+     */
+    if (favorites && favorites.length) {
+        list = favorites.reduce((acc: any, item: any) => {
+            favoritesDict = {
+                ...favoritesDict,
+                ...item?.propertyId && {
+                    [item.propertyId]: item.id,
+                },
+            };
+
+            acc.push(item.property);
+
+            return acc;
+        }, []);
+    }
+
+    return {
+        propertyList: list,
+        favorites: favoritesDict,
+    };
+});
 </script>
 
 <style lang="scss" module>

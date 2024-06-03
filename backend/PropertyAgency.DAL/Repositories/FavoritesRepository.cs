@@ -13,22 +13,27 @@ public class FavoritesRepository : IFavoritesRepository
         _context = context;
     }
     
-    public async Task<Favorite> Create(Favorite entity)
+    public async Task<Guid> Create(Favorite entity)
     {
+        var existingFavorite = await _context.Favorites.FirstOrDefaultAsync(f => f.PropertyId == entity.PropertyId && f.UserId == entity.UserId);
+
+        if (existingFavorite != null)
+        {
+            return existingFavorite.Id;
+        }
+
         await _context.Favorites.AddAsync(entity);
         await _context.SaveChangesAsync();
-        return entity;
+        return entity.Id;
     }
+    
 
-    public async Task<Favorite> GetById(Guid id)
+    public async Task<List<Favorite>> GetFavoritesByUserId(Guid userId)
     {
-        return await _context.Favorites.AsNoTracking().Include(e => e.Property).Include(e => e.User).FirstOrDefaultAsync(p => p.Id == id);
-
-    }
-
-    public async Task<List<Favorite>> Get()
-    {
-        return await _context.Favorites.AsNoTracking().Include(e => e.User).Include(e => e.Property).ToListAsync();
+        return await _context.Favorites.AsNoTracking()
+            .Include(e => e.Property)
+            .Where(f => f.UserId == userId)
+            .ToListAsync();
     }
 
     public async Task<bool> Delete(Guid id)

@@ -1,3 +1,5 @@
+
+
 namespace PropertyAgency.API.Dtos;
 
 public class AddressDto
@@ -8,5 +10,4 @@ public class AddressDto
     public string Country { get; set; }
     public string ZipCode { get; set; }
 
-    public Guid PropertyId { get; set; }
 }

@@ -24,7 +24,6 @@ public class AddressesController : ControllerBase
         result.State = payload.State;
         result.Country = payload.Country;
         result.ZipCode = payload.ZipCode;
-        result.PropertyId = payload.PropertyId;
         return result;
     }
     [HttpGet]
@@ -48,8 +47,8 @@ public class AddressesController : ControllerBase
         await _addressesService.CreateAddress(newAddress);
         return Created($"/address/{newAddress.Id}", newAddress);
     }
-    [HttpPut("{id:guid}")]
-    public async Task<IActionResult> UpdateProperty(Guid id, AddressDto address)
+    [HttpPatch("{id:guid}")]
+    public async Task<IActionResult> UpdateAddress(Guid id, AddressDto address)
     {
         var updateAddress = MapCustomerObject(address);
         updateAddress.Id = id;
@@ -62,12 +61,6 @@ public class AddressesController : ControllerBase
     {
         return Ok(await _addressesService.DeleteAddress(id));
     }
-
-    [HttpGet("by-propertyId/{propertyId}")]
-    public async Task<IActionResult> GetByPropertyId(Guid propertyId)
-    {
-        var address = await _addressesService.GetByPropertyId(propertyId);
-        return Ok(address);
-    }
+    
 
 }

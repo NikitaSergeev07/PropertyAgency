@@ -48,7 +48,7 @@ public class RentalsController : ControllerBase
         await _rentalsService.CreateRental(newRental);
         return Created($"/rental/{newRental.Id}", newRental);
     }
-    [HttpPut("{id:guid}")]
+    [HttpPatch("{id:guid}")]
     public async Task<IActionResult> UpdateRental(Guid id, RentalDto rental)
     {
         var updateRental = MapCustomerObject(rental);

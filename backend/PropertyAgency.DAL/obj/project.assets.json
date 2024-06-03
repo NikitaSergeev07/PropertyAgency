@@ -4143,19 +4143,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/mac/.nuget/packages/": {}
+    "/Users/slavakosarev/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
+      "projectUniqueName": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
       "projectName": "PropertyAgency.DAL",
-      "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
-      "packagesPath": "/Users/mac/.nuget/packages/",
-      "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/",
+      "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
+      "packagesPath": "/Users/slavakosarev/.nuget/packages/",
+      "outputPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mac/.nuget/NuGet/NuGet.Config"
+        "/Users/slavakosarev/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4167,8 +4167,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-              "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+            "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+              "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
             }
           }
         }
@@ -4246,7 +4246,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/slavakosarev/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

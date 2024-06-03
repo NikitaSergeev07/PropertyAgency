@@ -36,7 +36,7 @@ export const useCommonStore = defineStore('common', () => {
     const fetchUser = async () => {
         const { data, error } = await $request.$get('/user');
 
-        if (data) {
+        if (data?.user) {
             user.value = data?.user;
             changeAuthInformer(false);
 

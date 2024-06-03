@@ -39,9 +39,5 @@ public class AddressesService : IAddressesService
     {
         return await _addressesRepository.Update(entity);
     }
-
-    public async Task<Address> GetByPropertyId(Guid propertyId)
-    {
-        return await _addressesRepository.GetByPropertyId(propertyId);
-    }
+    
 }

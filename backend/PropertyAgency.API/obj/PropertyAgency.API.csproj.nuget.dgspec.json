@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {}
+    "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.API/PropertyAgency.API.csproj": {}
   },
   "projects": {
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj": {
+    "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.API/PropertyAgency.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
+        "projectUniqueName": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.API/PropertyAgency.API.csproj",
         "projectName": "PropertyAgency.API",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/PropertyAgency.API.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.API/obj/",
+        "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.API/PropertyAgency.API.csproj",
+        "packagesPath": "/Users/slavakosarev/.nuget/packages/",
+        "outputPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "/Users/slavakosarev/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj"
+              "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/Services/Services.csproj": {
+                "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/Services/Services.csproj"
               }
             }
           }
@@ -104,21 +104,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/slavakosarev/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
+    "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
+        "projectUniqueName": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
         "projectName": "PropertyAgency.DAL",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/obj/",
+        "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
+        "packagesPath": "/Users/slavakosarev/.nuget/packages/",
+        "outputPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "/Users/slavakosarev/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -130,8 +130,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+              "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+                "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
               }
             }
           }
@@ -209,21 +209,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/slavakosarev/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+    "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+        "projectUniqueName": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
         "projectName": "PropertyAgency.Domain",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/obj/",
+        "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+        "packagesPath": "/Users/slavakosarev/.nuget/packages/",
+        "outputPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "/Users/slavakosarev/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -302,21 +302,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/slavakosarev/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj": {
+    "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/Services/Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj",
+        "projectUniqueName": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/Services/Services.csproj",
         "projectName": "Services",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/Services.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/Services/obj/",
+        "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/Services/Services.csproj",
+        "packagesPath": "/Users/slavakosarev/.nuget/packages/",
+        "outputPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/Services/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "/Users/slavakosarev/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -328,11 +328,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
+              "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
+                "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
               },
-              "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+              "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+                "projectPath": "/Users/slavakosarev/Desktop/work/PropertyAgency/backend/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
               }
             }
           }
@@ -402,7 +402,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/slavakosarev/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -12,39 +12,35 @@
                         :address="property.address"
                         :status="property.status"
                         :price="property.price"
-                        :in-favorite="Boolean(favoriteDict[property.id])"
+                        :in-favorite="Boolean(favoritesDict[property.id])"
                         :room-count="property.roomCount"
                         @add-favorite="addToFavorite(property.id)"
                         @remove-favorite="removeFromFavorite(property.id)"
                     />
+
+                    <pre>{{ property.id }}</pre>
                 </li>
             </ul>
+
+            <pre>{{ favoritesDict }}</pre>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { Property } from '~/assets/types/property';
-
 import PropertyCard from '~/components/Properties/PropertyCard.vue';
 
-const { propertyList } = withDefaults(defineProps<{
+const { propertyList, favorites } = withDefaults(defineProps<{
     propertyList: any[];
+    favorites: Record<string, string>,
 }>(), {
     propertyList: () => [],
+    favorites: () => ({}),
 });
 
 const { user } = useCommonStore();
 const { addPropertyToFavorite, removePropertyFromFavorite } = usePropertyStore();
-const favoriteDict = ref(propertyList?.reduce((acc: string[], item: Property) => ({
-    ...acc,
-    ...item?.favorites?.length
-        ? item.favorites.reduce((fAcc, fItem) => ({
-            ...fAcc,
-            [fItem.propertyId]: fItem.id,
-        }), {})
-        : {},
-}), {}));
+const favoritesDict = ref(favorites);
 
 const addToFavorite = async (propertyId: string) => {
     const res = await addPropertyToFavorite({
@@ -56,18 +52,17 @@ const addToFavorite = async (propertyId: string) => {
         return false;
     }
 
-    // TODO: Поправить на запись значения Favorite ID
-    favoriteDict.value[propertyId] = true;
+    favoritesDict.value[propertyId] = res;
 };
 
 const removeFromFavorite = async (propertyId: string) => {
-    const res = await removePropertyFromFavorite(favoriteDict.value[propertyId]);
+    const res = await removePropertyFromFavorite(favoritesDict.value[propertyId]);
 
     if (!res) {
         return false;
     }
 
-    delete favoriteDict.value[propertyId];
+    delete favoritesDict.value[propertyId];
 };
 </script>
 
