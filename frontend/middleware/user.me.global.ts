@@ -6,7 +6,7 @@ export default defineNuxtRouteMiddleware(async to => {
      * то прекращаем дальнейший код
      */
     if (to.path.includes('/auth/login') || to.path.includes('/auth/registration') || user?.id) {
-        changeAuthInformer(false);
+        changeAuthInformer({ show: false });
 
         return;
     }
@@ -21,6 +21,6 @@ export default defineNuxtRouteMiddleware(async to => {
     const res = await fetchUser();
 
     if (!res) {
-        changeAuthInformer(true);
+        changeAuthInformer({ show: true });
     }
 });

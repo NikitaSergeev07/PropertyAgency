@@ -10,19 +10,19 @@
 
             <aside :class="$style.aside">
                 <h1 :class="$style.title">
-                    Вы не авторизованы
+                    {{ title }}
                 </h1>
 
                 <div :class="$style.description">
-                    Для продолжения работы в системе, Вам необходимо войти в систему
+                    {{ text }}
                 </div>
 
                 <UiButton
-                    :to="{ name: $routes.LOGIN }"
+                    :to="{ name: redirectUrlName }"
                     size="large"
                     :class="$style.button"
                 >
-                    Авторизоваться
+                    {{ buttonText }}
                 </UiButton>
             </aside>
         </div>
@@ -30,7 +30,17 @@
 </template>
 
 <script setup lang="ts">
-const { $routes } = useNuxtApp();
+withDefaults(defineProps<{
+    title?: string;
+    text?: string;
+    buttonText?: string | null;
+    redirectUrlName?: string | null;
+}>(), {
+    title: 'Вы не авторизованы',
+    text: 'Для продолжения работы в системе, Вам необходимо войти в систему',
+    buttonText: 'Авторизоваться',
+    redirectUrlName: 'login',
+});
 
 const randomKeyValue = Math.floor(Math.random() * 3) + 1;
 const imagePath = `https://storage.yandexcloud.net/daily-flex/illustrations/404-${randomKeyValue}.svg`;

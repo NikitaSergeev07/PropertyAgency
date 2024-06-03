@@ -1,7 +1,13 @@
 <template>
     <div class="DefaultLayout">
         <div :class="$style.wrapper">
-            <template v-if="!showAuthInformer">
+            <AuthInformer
+                v-if="verificationInformer.show"
+                :title="verificationInformer.title"
+                :text="verificationInformer.text"
+            />
+
+            <template v-else>
                 <TheHeader />
 
                 <main :class="$style.content">
@@ -10,10 +16,6 @@
 
                 <TheFooter />
             </template>
-
-            <AuthInformer
-                v-else
-            />
         </div>
     </div>
 </template>
@@ -24,7 +26,7 @@ import TheHeader from '~/components/common/TheHeader.vue';
 import TheFooter from '~/components/common/TheFooter.vue';
 import AuthInformer from '~/components/common/AuthInformer.vue';
 
-const { showAuthInformer } = useCommonStore();
+const { verificationInformer } = useCommonStore();
 </script>
 
 <style lang="scss" module>
