@@ -15,6 +15,13 @@ public class FavoritesRepository : IFavoritesRepository
     
     public async Task<Guid> Create(Favorite entity)
     {
+        var existingFavorite = await _context.Favorites.FirstOrDefaultAsync(f => f.PropertyId == entity.PropertyId && f.UserId == entity.UserId);
+
+        if (existingFavorite != null)
+        {
+            return existingFavorite.Id;
+        }
+
         await _context.Favorites.AddAsync(entity);
         await _context.SaveChangesAsync();
         return entity.Id;

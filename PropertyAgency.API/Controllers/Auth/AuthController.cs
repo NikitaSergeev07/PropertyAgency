@@ -120,6 +120,7 @@ namespace PropertyAgency.API.Controllers
         [Authorize(Policy = "AdminPolicy")]
         public IActionResult AdminEndpoint()
         {
+            
             return Ok("Вы админ");
         }
     }

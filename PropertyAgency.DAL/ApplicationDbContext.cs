@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PropertyAgency.Domain.Entities;
+using Transaction = System.Transactions.Transaction;
 
 namespace PropertyAgency.DAL;
 
