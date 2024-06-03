@@ -15,11 +15,52 @@ namespace PropertyAgency.DAL.Repositories
         
         public async Task<User> Create(User entity)
         {
+            // Валидация данных
+            if (string.IsNullOrEmpty(entity.UserName))
+            {
+                throw new ArgumentException("Имя пользователя не может быть пустым.");
+            }
+
+            if (string.IsNullOrEmpty(entity.Email))
+            {
+                throw new ArgumentException("Почта не может быть пустой.");
+            }
+
+            if (string.IsNullOrEmpty(entity.Password))
+            {
+                throw new ArgumentException("Пароль не может быть пустым.");
+            }
+
+            if (string.IsNullOrEmpty(entity.Role.ToString()))
+            {
+                throw new ArgumentException("Роль не может быть пустой.");
+            }
+
+            // Проверка формата электронной почты
+            if (!IsValidEmail(entity.Email))
+            {
+                throw new ArgumentException("Некорректный формат электронной почты.");
+            }
+
+            // Проверка уникальности имени пользователя и электронной почты
+            if (await _context.Users.AnyAsync(u => u.UserName.ToLower() == entity.UserName.ToLower()))
+            {
+                throw new ArgumentException("Имя пользователя уже занято.");
+            }
+
+            if (await _context.Users.AnyAsync(u => u.Email.ToLower() == entity.Email.ToLower()))
+            {
+                throw new ArgumentException("Электронная почта уже используется.");
+            }
             await _context.Users.AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity;
         }
-
+        private bool IsValidEmail(string email)
+        {
+            // Простая проверка формата электронной почты
+            return !string.IsNullOrEmpty(email) && email.Contains("@") && email.Contains(".");
+        }
         public async Task<User> GetById(Guid id)
         {
             return await _context.Users

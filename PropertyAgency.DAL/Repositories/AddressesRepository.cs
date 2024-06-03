@@ -14,6 +14,27 @@ public class AddressesRepository : IAddressesRepository
     }
     public async Task<Address> Create(Address entity)
     {
+        // Валидация данных
+        if (string.IsNullOrEmpty(entity.City))
+        {
+            throw new ArgumentException("У adresa должен быть город.");
+        }
+        if (string.IsNullOrEmpty(entity.Country))
+        {
+            throw new ArgumentException("У adresa должна быть страна.");
+        }
+        if (string.IsNullOrEmpty(entity.ZipCode))
+        {
+            throw new ArgumentException("У adresa должен быть почтовый индекс.");
+        }
+        if (string.IsNullOrEmpty(entity.State))
+        {
+            throw new ArgumentException("У adresa должно быть указано состояние.");
+        }
+        if (string.IsNullOrEmpty(entity.Street))
+        {
+            throw new ArgumentException("У adresa должна быть улица.");
+        }
         await _context.Addresses.AddAsync(entity);
         await _context.SaveChangesAsync();
         return entity;

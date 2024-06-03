@@ -14,7 +14,38 @@ public class TransactionsRepository : ITransactionsRepository
     }
     public async Task<Transaction> Create(Transaction entity)
     {
+        // Валидация данных
+        if (entity.TransactionDate == DateTime.MinValue)
+        {
+            throw new ArgumentException("Дата транзакции не может быть пустой.");
+        }
 
+        if (entity.Amount <= 0)
+        {
+            throw new ArgumentException("Сумма транзакции должна быть больше 0.");
+        }
+
+        // Проверка существования имущества, покупателя и продавца в БД
+        if (!await _context.Properties.AnyAsync(p => p.Id == entity.PropertyId))
+        {
+            throw new ArgumentException("Имущество с указанным идентификатором не найдено.");
+        }
+
+        if (!await _context.Users.AnyAsync(b => b.Id == entity.BuyerId))
+        {
+            throw new ArgumentException("Покупатель с указанным идентификатором не найден.");
+        }
+
+        if (!await _context.Users.AnyAsync(s => s.Id == entity.SellerId))
+        {
+            throw new ArgumentException("Продавец с указанным идентификатором не найден.");
+        }
+
+        // Проверка уникальности идентификатора транзакции
+        if (await _context.Transactions.AnyAsync(t => t.Id == entity.Id))
+        {
+            throw new ArgumentException("Транзакция с указанным идентификатором уже существует.");
+        }
         await _context.Transactions.AddAsync(entity);
         await _context.SaveChangesAsync();
         return entity;

@@ -14,6 +14,23 @@ public class PropertiesRepository : IPropertiesRepository
     }
     public async Task<Property> Create(Property entity)
     {
+        // Валидация данных
+        if (string.IsNullOrEmpty(entity.Status))
+        {
+            throw new ArgumentException("У хаты должен былжен быть статус");
+        }
+        if (entity.Price <= 0)
+        {
+            throw new ArgumentException("У хаты должна быть неотрицательная цена, лол");
+        }
+        if (string.IsNullOrEmpty(entity.Title))
+        {
+            throw new ArgumentException("У хаты должен быть заголовок.");
+        }
+        if (entity.RoomCount<0)
+        {
+            throw new ArgumentException("У хаты должно быть комнат меньше 0, лол.");
+        }
         await _context.Properties.AddAsync(entity);
         await _context.SaveChangesAsync();
         return entity;
