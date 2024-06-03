@@ -15,7 +15,7 @@
 import type { Favorites } from '~/assets/types/property';
 
 import PromoBanner from '~/components/PromoBanner/PromoBanner.vue';
-import PropertyBlock from '~/components/Properties/PropertyBlock.vue';
+import PropertyBlock from '~/components/property/PropertyBlock.vue';
 
 const { fetchPropertyList } = usePropertyStore();
 

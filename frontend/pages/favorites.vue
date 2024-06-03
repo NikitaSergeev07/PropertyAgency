@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import FavoritesEmpty from '~/components/favorites/FavoritesEmpty.vue';
-import PropertyBlock from '~/components/Properties/PropertyBlock.vue';
+import PropertyBlock from '~/components/property/PropertyBlock.vue';
 
 const { fetchFavoriteList } = usePropertyStore();
 

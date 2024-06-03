@@ -14,6 +14,7 @@
                         :price="property.price"
                         :in-favorite="Boolean(favoritesDict[property.id])"
                         :room-count="property.roomCount"
+                        @click="onNavigateToDetail(property.id)"
                         @add-favorite="addToFavorite(property.id)"
                         @remove-favorite="removeFromFavorite(property.id)"
                     />
@@ -24,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import PropertyCard from '~/components/Properties/PropertyCard.vue';
+import PropertyCard from '~/components/property/PropertyCard.vue';
 
 const { propertyList, favorites } = withDefaults(defineProps<{
     propertyList: any[];
@@ -34,9 +35,14 @@ const { propertyList, favorites } = withDefaults(defineProps<{
     favorites: () => ({}),
 });
 
+const { $router } = useNuxtApp();
 const { user } = useCommonStore();
 const { addPropertyToFavorite, removePropertyFromFavorite } = usePropertyStore();
 const favoritesDict = ref(favorites);
+
+const onNavigateToDetail = async (propertyId: string) => {
+    await $router.push({ path: `/property/${propertyId}` });
+};
 
 const addToFavorite = async (propertyId: string) => {
     const res = await addPropertyToFavorite({
@@ -78,7 +84,7 @@ const removeFromFavorite = async (propertyId: string) => {
     }
 
     .item {
-        width: 320px;
+        width: mul($unit, 80);
     }
 
     .card {

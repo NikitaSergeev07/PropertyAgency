@@ -1,6 +1,6 @@
 <template>
     <div class="PropertyCard">
-        <div :class="[$style.wrapper, classList]">
+        <div :class="[$style.wrapper, classList]" @click="emit('click')">
             <img
                 src="https://images.cdn-cian.ru/images/kvartira-mytishci-astrahova-prospekt-2177685667-4.jpg"
                 alt=""
@@ -12,7 +12,7 @@
                 round
                 outline
                 :class="$style.favorite"
-                @click="emit(inFavorite ? 'remove-favorite' : 'add-favorite');"
+                @click.stop="emit(inFavorite ? 'remove-favorite' : 'add-favorite');"
             >
                 <QIcon
                     :name="inFavorite ? 'favorite' : 'favorite_border'"
@@ -28,7 +28,7 @@
 
                 <h6 :class="$style.flat">
                     <span>{{ roomCount === 0 ? 'Студия' : 'Квартира' }}</span>
-                    <span></span>
+                    <span v-if="roomCount">{{ roomCount }}-комнатная</span>
                 </h6>
 
                 <div v-if="address" :class="$style.address">
@@ -45,6 +45,7 @@
 import type { PropertyAddress } from 'assets/types/property';
 
 const emit = defineEmits([
+    'click',
     'add-favorite',
     'remove-favorite',
 ]);
@@ -77,17 +78,21 @@ const classList = computed(() => [
 <style lang="scss" module>
     .wrapper {
         position: relative;
-        overflow: hidden;
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
-        row-gap: mul($unit, 3);
-        border-radius: 12px;
+        cursor: pointer;
 
         &:global(.--in-favorite) {
             .icon {
                 color: $error-500;
+            }
+        }
+
+        @include hover {
+            .title {
+                color: $primary-500;
             }
         }
     }
@@ -95,6 +100,7 @@ const classList = computed(() => [
     .image {
         width: 320px;
         height: 280px;
+        border-radius: 12px 12px 0 0;
     }
 
     .favorite {
@@ -117,19 +123,45 @@ const classList = computed(() => [
     .content {
         display: flex;
         flex-direction: column;
+        padding: mul($unit, 3);
         row-gap: mul($unit, 2);
+        border-radius: 0 0 mul($unit, 3) mul($unit, 3);
+        border: 1px solid $gray-200;
+        border-top: none;
     }
 
     .title {
         @include text-xl;
 
+        padding-bottom: mul($unit, 3);
+        border-bottom: 1px solid $gray-200;
         font-weight: 500;
+        color: $black;
+        transition: color .3s ease;
     }
 
     .flat {
         @include text-m;
 
+        display: flex;
+        align-items: center;
+        column-gap: mul($unit, 2);
         font-weight: 500;
+
+        span {
+            &:last-of-type {
+                order: 3;
+            }
+        }
+
+        &:after {
+            content: '';
+            order: 2;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: $gray-400;
+        }
     }
 
     .address {

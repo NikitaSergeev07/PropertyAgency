@@ -31,10 +31,6 @@ const tabs = [
         id: 'sale',
         name: 'Купить',
     },
-    {
-        id: 'rent',
-        name: 'Снять',
-    },
 ];
 
 const activeTab = ref(0);

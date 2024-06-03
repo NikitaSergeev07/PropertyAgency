@@ -8,6 +8,7 @@ interface AddToFavorite {
 export const usePropertyStore = defineStore('property', () => {
     const { $request } = useNuxtApp();
     const propertyList = ref<Property[]>([]);
+    const propertyDetail = ref<Partial<Property>>({});
     const favoriteList = ref([]);
 
     const fetchPropertyList = async () => {
@@ -20,6 +21,18 @@ export const usePropertyStore = defineStore('property', () => {
         }
 
         return [];
+    };
+
+    const fetchPropertyDetail = async (propertyId: string) => {
+        const { data } = await $request.$get(`/Properties/${propertyId}`);
+
+        if (data) {
+            propertyDetail.value = data;
+
+            return data;
+        }
+
+        return {};
     };
 
     const addPropertyToFavorite = async ({ userId, propertyId }: AddToFavorite) => {
@@ -54,11 +67,15 @@ export const usePropertyStore = defineStore('property', () => {
 
             return data;
         }
+
+        return [];
     };
 
     return {
         propertyList,
         fetchPropertyList,
+        propertyDetail,
+        fetchPropertyDetail,
         addPropertyToFavorite,
         removePropertyFromFavorite,
         // Favorite
