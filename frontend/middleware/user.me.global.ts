@@ -1,12 +1,12 @@
 export default defineNuxtRouteMiddleware(async to => {
-    const { fetchUser, user, changeAuthInformer } = useCommonStore();
+    const { fetchUser, user, changeVerificationInformer } = useCommonStore();
 
     /**
      * Проверяем если страница login или registration или есть user ID
      * то прекращаем дальнейший код
      */
     if (to.path.includes('/auth/login') || to.path.includes('/auth/registration') || user?.id) {
-        changeAuthInformer({ show: false });
+        changeVerificationInformer({ show: false });
 
         return;
     }
@@ -21,6 +21,6 @@ export default defineNuxtRouteMiddleware(async to => {
     const res = await fetchUser();
 
     if (!res) {
-        changeAuthInformer({ show: true });
+        changeVerificationInformer({ show: true });
     }
 });

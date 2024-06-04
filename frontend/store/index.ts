@@ -9,6 +9,14 @@ interface User {
     favorites: any[]
 }
 
+interface VerificationInformer {
+    show: boolean;
+    title?: string;
+    text?: string;
+    buttonText?: string;
+    redirectUrlName?: string;
+}
+
 export const useCommonStore = defineStore('common', () => {
     const { $request } = useNuxtApp();
 
@@ -16,7 +24,13 @@ export const useCommonStore = defineStore('common', () => {
      * State
      */
     const user: Ref<Partial<User> | null> = ref(null);
-    const showAuthInformer = ref(true);
+    const showAuthInformer = ref({
+        show: false,
+        title: '',
+        text: '',
+        buttonText: '',
+        redirectUrlName: '',
+    });
 
     /**
      * Actions
@@ -29,8 +43,12 @@ export const useCommonStore = defineStore('common', () => {
         return data?.message === 'success';
     };
 
-    const changeAuthInformer = (val: boolean) => {
-        showAuthInformer.value = val;
+    const changeVerificationInformer = ({ show, title, text, buttonText, redirectUrlName }: VerificationInformer) => {
+        showAuthInformer.value.show = show ?? showAuthInformer.value.show;
+        showAuthInformer.value.title = title ?? showAuthInformer.value.title;
+        showAuthInformer.value.text = text ?? showAuthInformer.value.text;
+        showAuthInformer.value.buttonText = buttonText ?? showAuthInformer.value.buttonText;
+        showAuthInformer.value.redirectUrlName = redirectUrlName ?? showAuthInformer.value.redirectUrlName;
     };
 
     const fetchUser = async () => {
@@ -38,7 +56,7 @@ export const useCommonStore = defineStore('common', () => {
 
         if (data?.user) {
             user.value = data?.user;
-            changeAuthInformer(false);
+            changeVerificationInformer({ show: false });
 
             return true;
         } else if (error && error.statusCode === 401) {
@@ -53,6 +71,6 @@ export const useCommonStore = defineStore('common', () => {
         authRegister,
         fetchUser,
         userLogout,
-        changeAuthInformer,
+        changeVerificationInformer,
     };
 });
