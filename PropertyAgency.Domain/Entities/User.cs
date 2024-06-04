@@ -14,10 +14,15 @@ public class User
     
     public List<Favorite> Favorites { get; set; }
     public List<Rental> Rentals { get; set; }
+    public List<Operation> BuyerOperations { get; set; }
+    public List<Operation> SellerOperations { get; set; }
+
     public User()
     {
         Favorites = new List<Favorite>();
         Rentals = new List<Rental>();
+        BuyerOperations = new List<Operation>();
+        SellerOperations = new List<Operation>();
     }
 
 

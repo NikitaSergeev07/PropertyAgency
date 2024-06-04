@@ -22,18 +22,18 @@ public class PropertiesRepository : IPropertiesRepository
 
     public async Task<Property> GetById(Guid id)
     {
-        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.Favorites).Include(e => e.Address).FirstOrDefaultAsync(p => p.Id == id);
+        return await _context.Properties.AsNoTracking().Include(e => e.Operations).Include(e => e.Rentals).Include(e => e.Favorites).Include(e => e.Images).Include(e => e.Address).FirstOrDefaultAsync(p => p.Id == id);
 
     }
 
     public async Task<List<Property>> Get()
     {
-        return await _context.Properties.AsNoTracking().Include(e => e.Rentals).Include(e => e.Favorites).Include(e => e.Address).ToListAsync();
+        return await _context.Properties.AsNoTracking().Include(e => e.Operations).Include(e => e.Rentals).Include(e => e.Favorites).Include(e => e.Address).Include(e => e.Images).ToListAsync();
     }
 
     public async Task<bool> Delete(Guid id)
     {
-        await _context.Properties.Where(p => p.Id == id).Include(e => e.Rentals).Include(e => e.Favorites).ExecuteDeleteAsync();
+        await _context.Properties.Where(p => p.Id == id).Include(e => e.Operations).Include(e => e.Rentals).Include(e => e.Favorites).Include(e => e.Images).ExecuteDeleteAsync();
         return true;
     }
 
@@ -41,9 +41,11 @@ public class PropertiesRepository : IPropertiesRepository
     {
         await _context.Properties
             .Where(p => p.Id == entity.Id)
+            .Include(e => e.Operations)
             .Include(e => e.Favorites)
             .Include(e => e.Address)
             .Include(e => e.Rentals)
+            .Include(e => e.Images)
             .ExecuteUpdateAsync(s => s
                 .SetProperty(p => p.Title, p => entity.Title)
                 .SetProperty(p => p.Description, p => entity.Description)
@@ -58,7 +60,9 @@ public class PropertiesRepository : IPropertiesRepository
         {
             IQueryable<Property> query = _context.Properties.Include(e => e.Rentals)
                                                              .Include(e => e.Favorites)
-                                                             .Include(e => e.Address);
+                                                             .Include(e => e.Address)
+                                                             .Include(e => e.Images)
+                                                             .Include(e => e.Operations);
 
             if (rooms != null && rooms.Any())
             {

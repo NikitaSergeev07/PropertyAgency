@@ -17,11 +17,17 @@ public class Property
 
     public List<Favorite> Favorites { get; set; }
     public List<Rental> Rentals { get; set; }
+    
+    public List<Image> Images { get; set; }
+    
+    public List<Operation> Operations { get; set; }
 
     public Property()
     {
         Favorites = new List<Favorite>();
         Rentals = new List<Rental>();
+        Images = new List<Image>();
+        Operations = new List<Operation>();
     }
     
 }

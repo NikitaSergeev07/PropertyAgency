@@ -15,7 +15,9 @@ public class ApplicationDbContext : DbContext
     public DbSet<Favorite> Favorites { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Rental> Rentals { get; set; }
-
+    public DbSet<Image> Images { get; set; }
+    
+    public DbSet<Operation> Operations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,5 +46,34 @@ public class ApplicationDbContext : DbContext
             .HasOne(_ => _.Property)
             .WithMany(_ => _.Rentals)
             .HasForeignKey(_ => _.PropertyId);
+
+        modelBuilder.Entity<Image>()
+            .HasOne(_ => _.Property)
+            .WithMany(_ => _.Images)
+            .HasForeignKey(_ => _.PropertyId);
+
+        modelBuilder.Entity<Operation>()
+            .HasOne(_ => _.Property)
+            .WithMany(_ => _.Operations)
+            .HasForeignKey(_ => _.PropertyId);
+        
+        modelBuilder.Entity<Operation>()
+            .HasOne(_ => _.Property)
+            .WithMany(_ => _.Operations)
+            .HasForeignKey(_ => _.PropertyId);
+
+        modelBuilder.Entity<Operation>()
+            .HasOne(_ => _.Buyer)
+            .WithMany(_ => _.BuyerOperations)
+            .HasForeignKey(_ => _.BuyerId)
+            .OnDelete(DeleteBehavior.Restrict); 
+
+        modelBuilder.Entity<Operation>()
+            .HasOne(_ => _.Seller)
+            .WithMany(_ => _.SellerOperations)
+            .HasForeignKey(_ => _.SellerId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
+    
+    
 }

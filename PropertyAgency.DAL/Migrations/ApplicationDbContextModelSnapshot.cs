@@ -69,6 +69,58 @@ namespace PropertyAgency.DAL.Migrations
                     b.ToTable("Favorites");
                 });
 
+            modelBuilder.Entity("PropertyAgency.Domain.Entities.Image", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("PropertyId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PropertyId");
+
+                    b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("PropertyAgency.Domain.Entities.Operation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("BuyerId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("OperationDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("PropertyId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("SellerId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuyerId");
+
+                    b.HasIndex("PropertyId");
+
+                    b.HasIndex("SellerId");
+
+                    b.ToTable("Operations");
+                });
+
             modelBuilder.Entity("PropertyAgency.Domain.Entities.Property", b =>
                 {
                     b.Property<Guid>("Id")
@@ -178,6 +230,44 @@ namespace PropertyAgency.DAL.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("PropertyAgency.Domain.Entities.Image", b =>
+                {
+                    b.HasOne("PropertyAgency.Domain.Entities.Property", "Property")
+                        .WithMany("Images")
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Property");
+                });
+
+            modelBuilder.Entity("PropertyAgency.Domain.Entities.Operation", b =>
+                {
+                    b.HasOne("PropertyAgency.Domain.Entities.User", "Buyer")
+                        .WithMany("BuyerOperations")
+                        .HasForeignKey("BuyerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PropertyAgency.Domain.Entities.Property", "Property")
+                        .WithMany("Operations")
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PropertyAgency.Domain.Entities.User", "Seller")
+                        .WithMany("SellerOperations")
+                        .HasForeignKey("SellerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Buyer");
+
+                    b.Navigation("Property");
+
+                    b.Navigation("Seller");
+                });
+
             modelBuilder.Entity("PropertyAgency.Domain.Entities.Property", b =>
                 {
                     b.HasOne("PropertyAgency.Domain.Entities.Address", "Address")
@@ -217,14 +307,22 @@ namespace PropertyAgency.DAL.Migrations
                 {
                     b.Navigation("Favorites");
 
+                    b.Navigation("Images");
+
+                    b.Navigation("Operations");
+
                     b.Navigation("Rentals");
                 });
 
             modelBuilder.Entity("PropertyAgency.Domain.Entities.User", b =>
                 {
+                    b.Navigation("BuyerOperations");
+
                     b.Navigation("Favorites");
 
                     b.Navigation("Rentals");
+
+                    b.Navigation("SellerOperations");
                 });
 #pragma warning restore 612, 618
         }
