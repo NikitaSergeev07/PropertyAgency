@@ -24,7 +24,7 @@ export const useCommonStore = defineStore('common', () => {
      * State
      */
     const user: Ref<Partial<User> | null> = ref(null);
-    const showAuthInformer = ref({
+    const verificationInformer = ref({
         show: false,
         title: '',
         text: '',
@@ -44,11 +44,11 @@ export const useCommonStore = defineStore('common', () => {
     };
 
     const changeVerificationInformer = ({ show, title, text, buttonText, redirectUrlName }: VerificationInformer) => {
-        showAuthInformer.value.show = show ?? showAuthInformer.value.show;
-        showAuthInformer.value.title = title ?? showAuthInformer.value.title;
-        showAuthInformer.value.text = text ?? showAuthInformer.value.text;
-        showAuthInformer.value.buttonText = buttonText ?? showAuthInformer.value.buttonText;
-        showAuthInformer.value.redirectUrlName = redirectUrlName ?? showAuthInformer.value.redirectUrlName;
+        verificationInformer.value.show = show ?? verificationInformer.value.show;
+        verificationInformer.value.title = title ?? verificationInformer.value.title;
+        verificationInformer.value.text = text ?? verificationInformer.value.text;
+        verificationInformer.value.buttonText = buttonText ?? verificationInformer.value.buttonText;
+        verificationInformer.value.redirectUrlName = redirectUrlName ?? verificationInformer.value.redirectUrlName;
     };
 
     const fetchUser = async () => {
@@ -66,7 +66,7 @@ export const useCommonStore = defineStore('common', () => {
 
     return {
         user,
-        showAuthInformer,
+        verificationInformer,
         authLogin,
         authRegister,
         fetchUser,
