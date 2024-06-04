@@ -14,7 +14,7 @@ interface VerificationInformer {
     title?: string;
     text?: string;
     buttonText?: string;
-    redirectUrlName?: string;
+    redirectType?: string;
 }
 
 export const useCommonStore = defineStore('common', () => {
@@ -26,10 +26,10 @@ export const useCommonStore = defineStore('common', () => {
     const user: Ref<Partial<User> | null> = ref(null);
     const verificationInformer = ref({
         show: false,
-        title: '',
-        text: '',
-        buttonText: '',
-        redirectUrlName: '',
+        title: 'Вы не авторизованы',
+        text: 'Для продолжения работы в системе, Вам необходимо войти в систему',
+        buttonText: 'Авторизоваться',
+        redirectType: 'login',
     });
 
     /**
@@ -43,12 +43,12 @@ export const useCommonStore = defineStore('common', () => {
         return data?.message === 'success';
     };
 
-    const changeVerificationInformer = ({ show, title, text, buttonText, redirectUrlName }: VerificationInformer) => {
+    const changeVerificationInformer = ({ show, title, text, buttonText, redirectType }: VerificationInformer) => {
         verificationInformer.value.show = show ?? verificationInformer.value.show;
         verificationInformer.value.title = title ?? verificationInformer.value.title;
         verificationInformer.value.text = text ?? verificationInformer.value.text;
         verificationInformer.value.buttonText = buttonText ?? verificationInformer.value.buttonText;
-        verificationInformer.value.redirectUrlName = redirectUrlName ?? verificationInformer.value.redirectUrlName;
+        verificationInformer.value.redirectType = redirectType ?? verificationInformer.value.redirectType;
     };
 
     const fetchUser = async () => {

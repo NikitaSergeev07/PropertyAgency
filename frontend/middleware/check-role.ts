@@ -8,7 +8,7 @@ export default defineNuxtRouteMiddleware(to => {
             text: 'Для того чтобы попасть на эту страницу у Вас должна быть роль администратора',
             show: true,
             buttonText: 'Вернуться назад',
-            redirectUrlName: $routes.HOME,
+            redirectType: $routes.HOME,
         });
     }
 });

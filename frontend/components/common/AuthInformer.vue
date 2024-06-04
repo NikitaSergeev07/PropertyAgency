@@ -18,7 +18,7 @@
                 </div>
 
                 <UiButton
-                    :to="{ name: redirectUrlName }"
+                    :to="{ path: buttonUrlRedirect }"
                     size="large"
                     :class="$style.button"
                 >
@@ -30,20 +30,22 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
+const { redirectType } = withDefaults(defineProps<{
     title?: string;
     text?: string;
     buttonText?: string | null;
-    redirectUrlName?: string | null;
+    redirectType?: string | null;
 }>(), {
     title: 'Вы не авторизованы',
     text: 'Для продолжения работы в системе, Вам необходимо войти в систему',
     buttonText: 'Авторизоваться',
-    redirectUrlName: 'login',
+    redirectType: 'login',
 });
 
 const randomKeyValue = Math.floor(Math.random() * 3) + 1;
 const imagePath = `https://storage.yandexcloud.net/daily-flex/illustrations/404-${randomKeyValue}.svg`;
+
+const buttonUrlRedirect = computed(() => redirectType === 'login' ? '/auth/login' : '/');
 </script>
 
 <style lang="scss" module>

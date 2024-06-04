@@ -6,7 +6,7 @@
                 :title="verificationInformer.title"
                 :text="verificationInformer.text"
                 :button-text="verificationInformer.buttonText"
-                :redirect-url-name="verificationInformer.redirectUrlName"
+                :redirect-type="verificationInformer.redirectType"
             />
 
             <main v-else :class="$style.content">
