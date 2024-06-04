@@ -22,9 +22,9 @@
 
 <script lang="ts" setup>
 // Components
+import AuthInformer from '~/components/common/AuthInformer.vue';
 import TheHeader from '~/components/common/TheHeader.vue';
 import TheFooter from '~/components/common/TheFooter.vue';
-import AuthInformer from '~/components/common/AuthInformer.vue';
 
 const { verificationInformer } = useCommonStore();
 </script>
