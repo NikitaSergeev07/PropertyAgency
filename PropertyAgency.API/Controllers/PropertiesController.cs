@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PropertyAgency.API.Dtos;
 using PropertyAgency.API.Dtos.Filter;
@@ -30,20 +31,33 @@ public class PropertiesController : ControllerBase
     
     
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetProperties()
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         var properties = await _propertiesService.GetProperties();
         
         return Ok(properties);
     }
     [HttpGet("{id:guid}")]
+    [Authorize]
     public async Task<IActionResult> GetById(Guid id)
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         var property = await _propertiesService.GetById(id);
         return Ok(property);
     }
     
     [HttpPost]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> CreateProperty(PropertyDto property)
     {
         var newProperty = MapCustomerObject(property);
@@ -51,6 +65,7 @@ public class PropertiesController : ControllerBase
         return Created($"/property/{newProperty.Id}", newProperty);
     }
     [HttpPatch("{id:guid}")]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> UpdateProperty(Guid id, PropertyDto property)
     {
         var updateProperty = MapCustomerObject(property);
@@ -60,6 +75,7 @@ public class PropertiesController : ControllerBase
     }
     
     [HttpDelete("{id:guid}")]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> DeleteProperty(Guid id)
     {
         return Ok(await _propertiesService.DeleteProperty(id));
@@ -67,8 +83,14 @@ public class PropertiesController : ControllerBase
     }
     
     [HttpGet("filtered")]
+    [Authorize]
     public async Task<ActionResult<List<Property>>> GetFilteredProperties([FromQuery] PropertyFilterDTO filter)
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         try
         {
             List<Property> properties = await _propertiesService.GetFilteredProperties(filter.Rooms, filter.PriceMin, filter.PriceMax, filter.Street, filter.City, filter.State, filter.Country, filter.ZipCode);

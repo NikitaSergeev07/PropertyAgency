@@ -57,57 +57,64 @@ public class PropertiesRepository : IPropertiesRepository
     }
     
     public async Task<List<Property>> GetFilteredProperties(List<int> rooms, decimal? priceMin, decimal? priceMax, string street = null, string city = null, string state = null, string country = null, string zipCode = null)
-        {
-            IQueryable<Property> query = _context.Properties.Include(e => e.Rentals)
-                                                             .Include(e => e.Favorites)
-                                                             .Include(e => e.Address)
-                                                             .Include(e => e.Images)
-                                                             .Include(e => e.Operations);
+    {
+        IQueryable<Property> query = _context.Properties.Include(e => e.Rentals)
+                                                         .Include(e => e.Favorites)
+                                                         .Include(e => e.Address)
+                                                         .Include(e => e.Images)
+                                                         .Include(e => e.Operations);
 
-            if (rooms != null && rooms.Any())
+        if (rooms != null && rooms.Any())
+        {
+            if (rooms.Contains(6))
+            {
+                query = query.Where(p => p.RoomCount >= 6 || rooms.Contains(p.RoomCount) && p.RoomCount < 6);
+            }
+            else
             {
                 query = query.Where(p => rooms.Contains(p.RoomCount));
             }
-
-            if (priceMin.HasValue && priceMax.HasValue && priceMin.Value >= 0 && priceMax.Value > priceMin.Value)
-            {
-                query = query.Where(p => p.Price >= priceMin.Value && p.Price <= priceMax.Value);
-            }
-            else if (priceMin.HasValue && priceMin.Value >= 0)
-            {
-                query = query.Where(p => p.Price >= priceMin.Value);
-            }
-            else if (priceMax.HasValue && priceMax.Value >= 0)
-            {
-                query = query.Where(p => p.Price <= priceMax.Value);
-            }
-
-            if (!string.IsNullOrEmpty(street))
-            {
-                query = query.Where(p => p.Address.Street.Contains(street));
-            }
-
-            if (!string.IsNullOrEmpty(city))
-            {
-                query = query.Where(p => p.Address.City.Contains(city));
-            }
-
-            if (!string.IsNullOrEmpty(state))
-            {
-                query = query.Where(p => p.Address.State.Contains(state));
-            }
-
-            if (!string.IsNullOrEmpty(country))
-            {
-                query = query.Where(p => p.Address.Country.Contains(country));
-            }
-
-            if (!string.IsNullOrEmpty(zipCode))
-            {
-                query = query.Where(p => p.Address.ZipCode.Contains(zipCode));
-            }
-
-            return await query.AsNoTracking().ToListAsync();
         }
+
+        if (priceMin.HasValue && priceMax.HasValue && priceMin.Value >= 0 && priceMax.Value > priceMin.Value)
+        {
+            query = query.Where(p => p.Price >= priceMin.Value && p.Price <= priceMax.Value);
+        }
+        else if (priceMin.HasValue && priceMin.Value >= 0)
+        {
+            query = query.Where(p => p.Price >= priceMin.Value);
+        }
+        else if (priceMax.HasValue && priceMax.Value >= 0)
+        {
+            query = query.Where(p => p.Price <= priceMax.Value);
+        }
+
+        if (!string.IsNullOrEmpty(street))
+        {
+            query = query.Where(p => p.Address.Street.Contains(street));
+        }
+
+        if (!string.IsNullOrEmpty(city))
+        {
+            query = query.Where(p => p.Address.City.Contains(city));
+        }
+
+        if (!string.IsNullOrEmpty(state))
+        {
+            query = query.Where(p => p.Address.State.Contains(state));
+        }
+
+        if (!string.IsNullOrEmpty(country))
+        {
+            query = query.Where(p => p.Address.Country.Contains(country));
+        }
+
+        if (!string.IsNullOrEmpty(zipCode))
+        {
+            query = query.Where(p => p.Address.ZipCode.Contains(zipCode));
+        }
+
+        return await query.AsNoTracking().ToListAsync();
+    }
 
 }

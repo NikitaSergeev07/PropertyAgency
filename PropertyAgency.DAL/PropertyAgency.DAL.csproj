@@ -27,8 +27,4 @@
       <ProjectReference Include="..\PropertyAgency.Domain\PropertyAgency.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Configurations\" />
-    </ItemGroup>
-
 </Project>

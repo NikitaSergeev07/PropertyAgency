@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,15 +20,27 @@ namespace PropertyAgency.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetImages()
         {
+            var token = Request.Cookies["jwt"];
+            if (string.IsNullOrEmpty(token))
+            {
+                return Unauthorized();
+            }
             var images = await _imagesService.GetImages();
             return Ok(images);
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetById(Guid id)
         {
+            var token = Request.Cookies["jwt"];
+            if (string.IsNullOrEmpty(token))
+            {
+                return Unauthorized();
+            }
             var image = await _imagesService.GetById(id);
             if (image == null)
                 return NotFound();
@@ -66,6 +79,7 @@ namespace PropertyAgency.Controllers
         
 
         [HttpPost]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> UploadImage(IFormFile file, [FromForm] Guid propertyId)
         {
             var uploadResult = await _imagesService.SaveImage(file, _uploadPath, propertyId);
@@ -76,6 +90,7 @@ namespace PropertyAgency.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> DeleteImage(Guid id)
         {
             var image = await _imagesService.GetById(id);
@@ -104,6 +119,7 @@ namespace PropertyAgency.Controllers
         }
 
         [HttpPatch("{id}")]
+        [Authorize(Policy = "AdminPolicy")]
         public async Task<IActionResult> UpdateImage(Guid id, IFormFile file)
         {
             // Получаем данные об изображении из репозитория
@@ -152,8 +168,14 @@ namespace PropertyAgency.Controllers
         }
         
         [HttpGet("property/{propertyId}")]
+        [Authorize]
         public async Task<IActionResult> GetImagesByProperty(Guid propertyId)
         {
+            var token = Request.Cookies["jwt"];
+            if (string.IsNullOrEmpty(token))
+            {
+                return Unauthorized();
+            }
             var images = await _imagesService.GetByProperty(propertyId);
             if (images == null || images.Count == 0)
                 return NotFound();

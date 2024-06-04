@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using PropertyAgency.API.Dtos;
@@ -28,20 +29,33 @@ public class RentalsController : ControllerBase
         return result;
     }
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetRentals()
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         var rentals = await _rentalsService.GetRentals();
 
         return Ok(rentals);
     }
     [HttpGet("{id:guid}")]
+    [Authorize]
     public async Task<IActionResult> GetById(Guid id)
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         var rental = await _rentalsService.GetById(id);
         return Ok(rental);
     }
     
     [HttpPost]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> CreateRental(RentalDto rental)
     {
         var newRental = MapCustomerObject(rental);
@@ -49,6 +63,7 @@ public class RentalsController : ControllerBase
         return Created($"/rental/{newRental.Id}", newRental);
     }
     [HttpPatch("{id:guid}")]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> UpdateRental(Guid id, RentalDto rental)
     {
         var updateRental = MapCustomerObject(rental);
@@ -58,14 +73,21 @@ public class RentalsController : ControllerBase
     }
     
     [HttpDelete("{id:guid}")]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> DeleteRental(Guid id)
     {
         return Ok(await _rentalsService.DeleteRental(id));
     }
 
     [HttpGet("by-betweenDate")]
+    [Authorize]
     public async Task<IActionResult> GetByBetweenDate([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         var rentals = await _rentalsService.GetByBetweenDate(startDate, endDate);
         return Ok(rentals);
     }
