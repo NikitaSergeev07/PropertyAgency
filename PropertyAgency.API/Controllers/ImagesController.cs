@@ -12,7 +12,7 @@ namespace PropertyAgency.Controllers
     public class ImagesController : ControllerBase
     {
         private readonly IImagesService _imagesService;
-        private readonly string _uploadPath = "./uploads";
+        private readonly string _uploadPath = "../../../uploads";
 
         public ImagesController(IImagesService imagesService)
         {

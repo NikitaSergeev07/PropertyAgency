@@ -1,33 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {}
+    "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\Services\\Services.csproj": {}
   },
   "projects": {
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
+    "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj",
         "projectName": "PropertyAgency.DAL",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/obj/",
+        "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj",
+        "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+              "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
+                "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj"
               }
             }
           }
@@ -36,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -80,6 +88,10 @@
               "target": "Package",
               "version": "[7.5.2, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Swashbuckle.AspNetCore.Filters": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -105,26 +117,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
+    "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
         "projectName": "PropertyAgency.Domain",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/obj/",
+        "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
+        "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -137,6 +152,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -173,6 +193,10 @@
               "target": "Package",
               "version": "[7.5.2, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Swashbuckle.AspNetCore.Filters": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -198,37 +222,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj": {
+    "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
+        "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/Services.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/Services/obj/",
+        "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mac/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.DAL/PropertyAgency.DAL.csproj"
+              "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj": {
+                "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.DAL\\PropertyAgency.DAL.csproj"
               },
-              "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj": {
-                "projectPath": "/Users/mac/ВУЗ/Project_OOP/backend/PropertyAgency/PropertyAgency.Domain/PropertyAgency.Domain.csproj"
+              "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
+                "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj"
               }
             }
           }
@@ -237,6 +264,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -273,6 +305,10 @@
               "target": "Package",
               "version": "[7.5.2, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Swashbuckle.AspNetCore.Filters": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -298,7 +334,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
