@@ -2,7 +2,7 @@
     <div class="PropertyCard">
         <div :class="[$style.wrapper, classList]" @click="emit('click')">
             <img
-                src="https://images.cdn-cian.ru/images/kvartira-mytishci-astrahova-prospekt-2177685667-4.jpg"
+                src="./uploads/6658c732-4008-4e26-b0f8-e180d0028751.jpeg"
                 alt=""
                 loading="lazy"
                 :class="$style.image"

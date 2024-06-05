@@ -65,6 +65,17 @@
                 </QSelect>
             </QForm>
 
+            <QFile
+                v-model="actualValue.images"
+                accept=".jpg, image/*"
+                outlined
+                multiple
+            >
+                <template #prepend>
+                    <QIcon name="attach_file" />
+                </template>
+            </QFile>
+
             <div :class="$style.cell">
                 <h5 :class="$style.title">Адрес квартиры</h5>
 
@@ -207,7 +218,7 @@ const statusOptions = [
 
 const { $request } = useNuxtApp();
 const { addressList } = storeToRefs(usePropertyStore());
-const { updateProperty, createAddress } = usePropertyStore();
+const { updateProperty, createAddress, updateImagesProperty } = usePropertyStore();
 
 const formRef = ref<QForm>(null as any);
 const addNewAddress = ref(false);
@@ -218,6 +229,7 @@ const actualValue = ref({
     price: property.price || 0,
     roomCount: property.roomCount || 0,
     status: property.status || '',
+    images: property.images || [],
     addressId: property.address?.id || '',
     address: {
         street: '',
@@ -281,7 +293,10 @@ const onSubmit = async () => {
     }
 
     try {
-        await updateProperty(property?.id || '', actualValue.value);
+        await Promise.all([
+            updateImagesProperty(property?.id || '', actualValue.value.images),
+            updateProperty(property?.id || '', actualValue.value),
+        ]);
 
         onClose();
     } catch (e) {

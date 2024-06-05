@@ -161,6 +161,30 @@ export const usePropertyStore = defineStore('property', () => {
         }
     };
 
+    const updateImagesProperty = async (propertyId: string, payload: any[]) => {
+        if (!payload?.length) {
+            return false;
+        }
+
+        try {
+            const uploadFile = async (file: any) => {
+                const formData = new FormData();
+
+                formData.append('file', file);
+
+                return await $fetch(`/Images/${propertyId}`, {
+                    method: 'POST',
+                    body: formData,
+                });
+            };
+
+            await Promise.all(payload.map(file => uploadFile(file)));
+        } catch (e) {
+            console.log('[PropertyUpdateModal/updateImagesProperty]: ', e);
+            return {};
+        }
+    };
+
     return {
         propertyList,
         fetchPropertyList,
@@ -178,5 +202,7 @@ export const usePropertyStore = defineStore('property', () => {
         addressList,
         fetchAddressList,
         createAddress,
+        // Images
+        updateImagesProperty,
     };
 });
