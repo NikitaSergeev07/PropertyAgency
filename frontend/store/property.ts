@@ -73,7 +73,7 @@ export const usePropertyStore = defineStore('property', () => {
         return [];
     };
 
-    const createProperty = async (propertyId: string, payload: any) => {
+    const createProperty = async (payload: any) => {
         try {
             const { data } = await $request.$post('/Properties', {
                 title: payload.title || '',
@@ -171,8 +171,9 @@ export const usePropertyStore = defineStore('property', () => {
                 const formData = new FormData();
 
                 formData.append('file', file);
+                formData.append('propertyId', propertyId);
 
-                return await $fetch(`/Images/${propertyId}`, {
+                return await $fetch('http://localhost:5248/Images', {
                     method: 'POST',
                     body: formData,
                 });
