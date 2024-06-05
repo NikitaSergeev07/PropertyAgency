@@ -11,6 +11,8 @@ export const usePropertyStore = defineStore('property', () => {
     const propertyDetail = ref<Partial<Property>>({});
     const favoriteList = ref([]);
 
+    const addressList = ref([]);
+
     const fetchPropertyList = async () => {
         const { data } = await $request.$get('/Properties');
 
@@ -71,6 +73,94 @@ export const usePropertyStore = defineStore('property', () => {
         return [];
     };
 
+    const createProperty = async (propertyId: string, payload: any) => {
+        try {
+            const { data } = await $request.$post('/Properties', {
+                title: payload.title || '',
+                description: payload.description || '',
+                price: payload.price || '',
+                roomCount: payload.roomCount || '',
+                status: payload.status || '',
+                addressId: payload.addressId || '',
+            });
+
+            propertyList.value.push({
+                ...data,
+                address: data?.address || payload.address,
+            });
+        } catch (e) {
+            console.log('PROPERTY_STORE:CREATE_PROPERTY: ', e);
+        }
+    };
+
+    const updateProperty = async (propertyId: string, payload: any) => {
+        try {
+            const { data } = await $request.$patch(`/Properties/${propertyId}`, {
+                title: payload.title || '',
+                description: payload.description || '',
+                price: payload.price || '',
+                roomCount: payload.roomCount || '',
+                status: payload.status || '',
+                addressId: payload.addressId || '',
+            });
+
+            const index = propertyList.value.findIndex(p => p.id === propertyId);
+
+            propertyList.value[index] = {
+                ...data,
+
+                address: data?.address || payload.address,
+            };
+        } catch (e) {
+            console.log('PROPERTY_STORE:UPDATE_PROPERTY: ', e);
+        }
+    };
+
+    const deleteProperty = async (propertyId: string) => {
+        try {
+            const { data } = await $request.$delete(`/Properties/${propertyId}`);
+
+            if (data) {
+                const index = propertyList.value.findIndex(p => p.id === propertyId);
+
+                propertyList.value.splice(index, 1);
+            }
+        } catch (e) {
+            console.log('PROPERTY_STORE:UPDATE_PROPERTY: ', e);
+        }
+    };
+
+    const fetchAddressList = async () => {
+        try {
+            const { data } = await $request.$get('/Addresses');
+
+            if (data) {
+                addressList.value = data;
+            }
+        } catch (e) {
+            console.log('PROPERTY_STORE:FETCH_ADDRESS_LIST: ', e);
+        }
+    };
+
+    const createAddress = async (payload: any) => {
+        try {
+            const { data } = await $request.$post('/Addresses', {
+                street: payload.street || '',
+                city: payload.city || '',
+                state: payload.state || '',
+                country: payload.country || '',
+                zipCode: payload.zipCode || '',
+            });
+
+            addressList.value.push(data);
+
+            return data;
+        } catch (e) {
+            console.log('[PropertyUpdateModal/createNewAddress]: ', e);
+            return {};
+        }
+    };
+
     return {
         propertyList,
         fetchPropertyList,
@@ -78,8 +168,15 @@ export const usePropertyStore = defineStore('property', () => {
         fetchPropertyDetail,
         addPropertyToFavorite,
         removePropertyFromFavorite,
+        createProperty,
+        updateProperty,
+        deleteProperty,
         // Favorite
         favoriteList,
         fetchFavoriteList,
+        // Address
+        addressList,
+        fetchAddressList,
+        createAddress,
     };
 });

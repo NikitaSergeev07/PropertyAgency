@@ -9,6 +9,7 @@
             />
 
             <QBtn
+                v-if="hasFavorite"
                 round
                 outline
                 :class="$style.favorite"
@@ -61,8 +62,9 @@ const props = withDefaults(defineProps<{
     price: number;
     address?: Partial<PropertyAddress>,
     roomCount: number;
-    status: string | null;
-    inFavorite: boolean,
+    status?: string | null;
+    inFavorite?: boolean,
+    hasFavorite?: boolean,
 }>(), {
     title: null,
     description: null,
@@ -71,6 +73,7 @@ const props = withDefaults(defineProps<{
     status: null,
     address: () => ({}),
     inFavorite: false,
+    hasFavorite: true,
 });
 
 const classList = computed(() => [
