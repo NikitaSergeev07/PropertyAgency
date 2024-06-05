@@ -27,6 +27,7 @@
 
                     <main :class="$style.content">
                         <PropertyDetailGallery
+                            :images="propertyDetail.images"
                             :class="$style.gallery"
                         />
 

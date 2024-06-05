@@ -8,15 +8,13 @@
             >
                 <div class="swiper-wrapper">
                     <div
-                        v-for="(slide, index) in gallery"
+                        v-for="(slide, index) in images"
                         :key="`slide__${index}`"
                         :class="$style.slide"
                         class="swiper-slide"
                     >
-                        <img
-                            :src="slide.src"
-                            alt=""
-                            loading="lazy"
+                        <UiImage
+                            :image="slide.imageUrl"
                             :class="$style.image"
                         />
                     </div>
@@ -52,12 +50,11 @@
 import { Swiper } from 'swiper';
 import { Navigation } from 'swiper/modules';
 
-const gallery = [
-    { src: 'https://images.cdn-cian.ru/images/2141709541-1.jpg' },
-    { src: 'https://images.cdn-cian.ru/images/2141709561-1.jpg' },
-    { src: 'https://images.cdn-cian.ru/images/2141709573-1.jpg' },
-    { src: 'https://images.cdn-cian.ru/images/2141709584-1.jpg' },
-];
+withDefaults(defineProps<{
+    images?: { id: string, imageUrl: string }[];
+}>(), {
+    images: () => [],
+});
 
 const slider = ref<any>(null);
 const swiper = ref<any>(null);

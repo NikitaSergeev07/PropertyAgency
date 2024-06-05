@@ -22,7 +22,7 @@ export interface Property {
     price: number;
     roomCount: number;
     status: string;
-    images: string[];
+    images: { id: string, imageUrl: string }[];
     userId: string;
     user: {
         id: string;

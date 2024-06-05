@@ -165,7 +165,7 @@
                     :class="$style.button"
                     @click="onSubmit"
                 >
-                    Редактировать
+                    Создать
                 </UiButton>
 
                 <UiButton
@@ -273,7 +273,7 @@ const onSubmit = async () => {
     }
 
     try {
-        await createProperty(property?.id || '', actualValue.value);
+        await createProperty(actualValue.value);
 
         onClose();
     } catch (e) {

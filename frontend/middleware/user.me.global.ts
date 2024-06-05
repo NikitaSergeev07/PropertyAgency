@@ -1,3 +1,6 @@
+/**
+ * Эта функция вызывается ДО загрузки клиента
+ */
 export default defineNuxtRouteMiddleware(async to => {
     const { fetchUser, user, changeVerificationInformer } = useCommonStore();
 

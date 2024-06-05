@@ -1,12 +1,29 @@
 <template>
     <div class="PropertyCard">
         <div :class="[$style.wrapper, classList]" @click="emit('click')">
-            <img
-                src="./uploads/6658c732-4008-4e26-b0f8-e180d0028751.jpeg"
-                alt=""
-                loading="lazy"
-                :class="$style.image"
-            />
+
+            <div
+                v-if="images.length"
+                ref="swiper"
+                class="swiper"
+                :class="$style.slider"
+            >
+                <div class="swiper-wrapper">
+                    <div
+                        v-for="(slide, index) in images"
+                        :key="`slide__${index}`"
+                        :class="$style.slide"
+                        class="swiper-slide"
+                    >
+                        <UiImage
+                            :image="slide.imageUrl"
+                            :class="$style.image"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div v-else :class="$style.imagePlaceholder"></div>
 
             <QBtn
                 v-if="hasFavorite"
@@ -47,8 +64,11 @@
 </template>
 
 <script setup lang="ts">
+import { Swiper } from 'swiper';
+import { Navigation } from 'swiper/modules';
 import { splitThousands } from '../../assets/ts/utils/numbers';
-import type { PropertyAddress } from 'assets/types/property';
+import type { PropertyAddress } from '~/assets/types/property';
+
 
 const emit = defineEmits([
     'click',
@@ -63,6 +83,7 @@ const props = withDefaults(defineProps<{
     address?: Partial<PropertyAddress>,
     roomCount: number;
     status?: string | null;
+    images?: { id: string, imageUrl: string }[],
     inFavorite?: boolean,
     hasFavorite?: boolean,
 }>(), {
@@ -71,16 +92,37 @@ const props = withDefaults(defineProps<{
     price: 0,
     roomCount: 0,
     status: null,
+    images: () => [],
     address: () => ({}),
     inFavorite: false,
     hasFavorite: true,
 });
+
+const slider = ref<any>(null);
+const swiper = ref<any>(null);
+
+const initSwiper = () => {
+    slider.value = new Swiper(swiper.value, {
+        modules: [
+            Navigation,
+        ],
+
+        navigation: {
+            prevEl: '.swiper-arrow-left',
+            nextEl: '.swiper-arrow-right',
+        },
+
+        speed: 550,
+    });
+};
 
 const classList = computed(() => [
     {
         '--in-favorite': props.inFavorite,
     },
 ]);
+
+onMounted(() => initSwiper());
 </script>
 
 <style lang="scss" module>
@@ -105,10 +147,21 @@ const classList = computed(() => [
         }
     }
 
-    .image {
+    .slider,
+    .imagePlaceholder {
         width: 320px;
         height: 280px;
         border-radius: 12px 12px 0 0;
+    }
+
+    .imagePlaceholder {
+        background-color: $gray-50;
+    }
+
+    .slide,
+    .image {
+        width: 100%;
+        height: 100%;
     }
 
     .favorite {

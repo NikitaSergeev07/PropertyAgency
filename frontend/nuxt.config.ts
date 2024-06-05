@@ -17,6 +17,13 @@ export default defineNuxtConfig({
         },
     },
 
+    proxy: {
+        '/uploads': {
+            target: 'http://localhost:3001',
+            pathRewrite: { '^/uploads': '' },
+        },
+    },
+
     ssr: false,
 
     devtools: { enabled: true },

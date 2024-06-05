@@ -26,6 +26,7 @@
                         :status="property.status"
                         :address="property.address"
                         :description="property.description"
+                        :images="property.images"
                         :has-favorite="false"
                         :class="$style.card"
                     />

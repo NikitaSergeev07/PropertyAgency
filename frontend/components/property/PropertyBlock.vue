@@ -12,6 +12,7 @@
                         :address="property.address"
                         :status="property.status"
                         :price="property.price"
+                        :images="property.images"
                         :in-favorite="Boolean(favoritesDict[property.id])"
                         :room-count="property.roomCount"
                         @click="onNavigateToDetail(property.id)"

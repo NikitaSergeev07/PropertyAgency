@@ -4,8 +4,9 @@
             <PromoBanner/>
 
             <PropertyBlock
-                v-if="data?.propertyList?.length"
-                v-bind="data"
+                v-if="propertyList?.length"
+                :property-list="propertyList"
+                :favorites="favoritesDict"
             />
         </div>
     </div>
@@ -17,14 +18,21 @@ import type { Favorites } from '~/assets/types/property';
 import PromoBanner from '~/components/PromoBanner/PromoBanner.vue';
 import PropertyBlock from '~/components/property/PropertyBlock.vue';
 
+
+const { propertyList } = storeToRefs(usePropertyStore());
 const { fetchPropertyList } = usePropertyStore();
 
-const { data } = useAsyncData('IndexPage', async () => {
+useAsyncData('IndexPage', async () => {
     /**
      * Отправляем запрос за списком квартир
      */
-    const propertyList = await fetchPropertyList();
+    await fetchPropertyList();
+});
 
+const favoritesDict = computed(() => {
+    if (!propertyList.value.length) {
+        return {};
+    }
     /**
      * Вспомогательная функуция для обработки массива favorites у каждой сущности Property
      */
@@ -43,17 +51,12 @@ const { data } = useAsyncData('IndexPage', async () => {
      * Формируем объект квартир, которые были добавлены в избранное
      * Где ключ - это ID квартиры, а значение это ID Favorite
      */
-    const favoritesDict = propertyList?.reduce((acc: string[], property: any) => ({
+    return propertyList.value?.reduce((acc: string[], property: any) => ({
         ...acc,
         ...property?.favorites?.length
             ? getFavoritesDictFromProperty(property.favorites)
             : [],
     }), {});
-
-    return {
-        propertyList,
-        favorites: favoritesDict,
-    };
 });
 </script>
 
