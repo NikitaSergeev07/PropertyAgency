@@ -1026,6 +1026,41 @@
           }
         }
       },
+      "Npgsql/8.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.4",
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.4",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.4",
+          "Npgsql": "8.0.3"
+        },
+        "compile": {
+          "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Scrutor/3.3.0": {
         "type": "package",
         "dependencies": {
@@ -1563,6 +1598,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.0-preview.4.24267.1",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0-preview.4.24267.1",
           "Microsoft.IdentityModel.Tokens": "7.5.2",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
           "PropertyAgency.Domain": "1.0.0",
           "Swashbuckle.AspNetCore.Filters": "8.0.2",
           "System.IdentityModel.Tokens.Jwt": "7.5.2"
@@ -1584,6 +1620,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.5",
           "Microsoft.IdentityModel.Tokens": "7.5.2",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
           "Swashbuckle.AspNetCore.Filters": "8.0.2",
           "System.IdentityModel.Tokens.Jwt": "7.5.2"
         },
@@ -1604,6 +1641,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.5",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.5",
           "Microsoft.IdentityModel.Tokens": "7.5.2",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
           "PropertyAgency.DAL": "1.0.0",
           "PropertyAgency.Domain": "1.0.0",
           "Swashbuckle.AspNetCore.Filters": "8.0.2",
@@ -3769,6 +3807,44 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
+    "Npgsql/8.0.3": {
+      "sha512": "6WEmzsQJCZAlUG1pThKg/RmeF6V+I0DmBBBE/8YzpRtEzhyZzKcK7ulMANDm5CkxrALBEC8H+5plxHWtIL7xnA==",
+      "type": "package",
+      "path": "npgsql/8.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/Npgsql.dll",
+        "lib/net6.0/Npgsql.xml",
+        "lib/net7.0/Npgsql.dll",
+        "lib/net7.0/Npgsql.xml",
+        "lib/net8.0/Npgsql.dll",
+        "lib/net8.0/Npgsql.xml",
+        "lib/netstandard2.0/Npgsql.dll",
+        "lib/netstandard2.0/Npgsql.xml",
+        "lib/netstandard2.1/Npgsql.dll",
+        "lib/netstandard2.1/Npgsql.xml",
+        "npgsql.8.0.3.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.4": {
+      "sha512": "/hHd9MqTRVDgIpsToCcxMDxZqla0HAQACiITkq1+L9J2hmHKV6lBAPlauF+dlNSfHpus7rrljWx4nAanKD6qAw==",
+      "type": "package",
+      "path": "npgsql.entityframeworkcore.postgresql/8.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+        "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.xml",
+        "npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
+        "npgsql.entityframeworkcore.postgresql.nuspec",
+        "postgresql.png"
+      ]
+    },
     "Scrutor/3.3.0": {
       "sha512": "BwqCnFzp2/Z+pq17iztxlIkR/ZANyPRR4PdE57WL1w/JW4AM/2imoxBWTL3+G+YXA46ce4s9OUgwWqTXYrtI8A==",
       "type": "package",
@@ -4508,6 +4584,7 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.0-preview.4.24267.1",
       "Microsoft.IdentityModel.Tokens >= 7.5.2",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.4",
       "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "Swashbuckle.AspNetCore.Filters >= 8.0.2",
@@ -4520,11 +4597,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
       "projectName": "PropertyAgency.API",
       "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
       "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.API\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
+      "projectName": "PropertyAgency.API",
+      "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.API\\PropertyAgency.API.csproj",
+      "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.API\\obj\\",
+>>>>>>> Nikita
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4542,8 +4627,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj": {
               "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\Services\\Services.csproj"
+=======
+            "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\Services\\Services.csproj"
+>>>>>>> Nikita
             }
           }
         }
@@ -4552,6 +4642,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4587,6 +4682,10 @@
           "Microsoft.IdentityModel.Tokens": {
             "target": "Package",
             "version": "[7.5.2, )"
+          },
+          "Npgsql.EntityFrameworkCore.PostgreSQL": {
+            "target": "Package",
+            "version": "[8.0.4, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

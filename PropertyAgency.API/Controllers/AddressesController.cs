@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PropertyAgency.API.Dtos;
 using PropertyAgency.Domain.Entities;
@@ -27,27 +28,41 @@ public class AddressesController : ControllerBase
         return result;
     }
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAddresses()
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         var addresses = await _addressesService.GetAddresses();
         
         return Ok(addresses);
     }
     [HttpGet("{id:guid}")]
+    [Authorize]
     public async Task<IActionResult> GetById(Guid id)
     {
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
         var address = await _addressesService.GetById(id);
         return Ok(address);
     }
     
     [HttpPost]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> CreateAddress(AddressDto address)
     {
         var newAddress = MapCustomerObject(address);
         await _addressesService.CreateAddress(newAddress);
         return Created($"/address/{newAddress.Id}", newAddress);
     }
-    [HttpPut("{id:guid}")]
+    [HttpPatch("{id:guid}")]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> UpdateAddress(Guid id, AddressDto address)
     {
         var updateAddress = MapCustomerObject(address);
@@ -57,6 +72,7 @@ public class AddressesController : ControllerBase
     }
     
     [HttpDelete("{id:guid}")]
+    [Authorize(Policy = "AdminPolicy")]
     public async Task<IActionResult> DeleteAddress(Guid id)
     {
         return Ok(await _addressesService.DeleteAddress(id));

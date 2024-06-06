@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
         "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\obj\\",
+=======
+    "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
+        "projectName": "PropertyAgency.Domain",
+        "projectPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
+        "packagesPath": "C:\\Users\\89169\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\obj\\",
+>>>>>>> Nikita
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\89169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -35,6 +49,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -70,6 +89,10 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[7.5.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Swashbuckle.AspNetCore.Filters": {
               "target": "Package",

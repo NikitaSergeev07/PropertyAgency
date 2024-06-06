@@ -38,5 +38,11 @@ public class PropertiesService : IPropertiesService
     {
         return await _propertiesRepository.Update(entity);
     }
-    
+
+    public async Task<List<Property>> GetFilteredProperties(List<int> rooms, decimal? priceMin, decimal? priceMax, string street = null, string city = null,
+        string state = null, string country = null, string zipCode = null)
+    {
+        return await _propertiesRepository.GetFilteredProperties(rooms, priceMin, priceMax, street, city, state,
+            country, zipCode);
+    }
 }

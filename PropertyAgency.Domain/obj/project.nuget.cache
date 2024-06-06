@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "/YC/8ieaSf3lpSnT0Ooa/HqIqCXQ92zipnI7xqsYNEnEvOHy7JMxc4zr0mV+5oug+5dkomOElyWE99ifODq2Eg==",
   "success": true,
   "projectFilePath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
+=======
+  "dgSpecHash": "q7AdgvgpXNM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\89169\\OneDrive\\Рабочий стол\\GitHub\\Backend\\PropertyAgency\\PropertyAgency.Domain\\PropertyAgency.Domain.csproj",
+>>>>>>> Nikita
   "expectedPackageFiles": [
     "C:\\Users\\89169\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -53,6 +59,11 @@
     "C:\\Users\\89169\\.nuget\\packages\\mono.texttemplating\\3.0.0-preview-0052-g5d0f76c785\\mono.texttemplating.3.0.0-preview-0052-g5d0f76c785.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+<<<<<<< HEAD
+=======
+    "C:\\Users\\89169\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
+    "C:\\Users\\89169\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.4\\npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
+>>>>>>> Nikita
     "C:\\Users\\89169\\.nuget\\packages\\scrutor\\3.3.0\\scrutor.3.3.0.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\swashbuckle.aspnetcore.filters\\8.0.2\\swashbuckle.aspnetcore.filters.8.0.2.nupkg.sha512",
     "C:\\Users\\89169\\.nuget\\packages\\swashbuckle.aspnetcore.filters.abstractions\\8.0.2\\swashbuckle.aspnetcore.filters.abstractions.8.0.2.nupkg.sha512",

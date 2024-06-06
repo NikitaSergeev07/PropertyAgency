@@ -14,12 +14,23 @@ public class User
     
     public List<Favorite> Favorites { get; set; }
     public List<Rental> Rentals { get; set; }
+<<<<<<< HEAD
     public List<Transaction> Transactions { get; set; }
+=======
+    public List<Operation> BuyerOperations { get; set; }
+    public List<Operation> SellerOperations { get; set; }
+
+>>>>>>> Nikita
     public User()
     {
         Favorites = new List<Favorite>();
         Rentals = new List<Rental>();
+<<<<<<< HEAD
         Transactions = new List<Transaction>();
+=======
+        BuyerOperations = new List<Operation>();
+        SellerOperations = new List<Operation>();
+>>>>>>> Nikita
     }
 
 

@@ -67,6 +67,8 @@ namespace PropertyAgency.DAL.Repositories
                 .AsNoTracking()
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
+                .Include(u => u.BuyerOperations)
+                .Include(u => u.SellerOperations)
                 .Where(u => u.Id == id)
                 .FirstOrDefaultAsync();
         }
@@ -77,6 +79,8 @@ namespace PropertyAgency.DAL.Repositories
                 .AsNoTracking()
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
+                .Include(u => u.BuyerOperations)
+                .Include(u => u.SellerOperations)
                 .ToListAsync();
         }
 
@@ -86,6 +90,8 @@ namespace PropertyAgency.DAL.Repositories
                 .Where(u => u.Id == id)
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
+                .Include(u => u.BuyerOperations)
+                .Include(u => u.SellerOperations)
                 .ExecuteDeleteAsync();
             return true;
         }
@@ -96,6 +102,8 @@ namespace PropertyAgency.DAL.Repositories
                 .Where(u => u.Id == entity.Id)
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
+                .Include(u => u.BuyerOperations)
+                .Include(u => u.SellerOperations)
                 .ExecuteUpdateAsync(s => s
                     .SetProperty(u => u.UserName, entity.UserName)
                     .SetProperty(u => u.Email, entity.Email)
@@ -110,6 +118,8 @@ namespace PropertyAgency.DAL.Repositories
                 .AsNoTracking()
                 .Include(u => u.Favorites)
                 .Include(u => u.Rentals)
+                .Include(u => u.BuyerOperations)
+                .Include(u => u.SellerOperations)
                 .FirstOrDefaultAsync(u => u.Email == email);
         }
         

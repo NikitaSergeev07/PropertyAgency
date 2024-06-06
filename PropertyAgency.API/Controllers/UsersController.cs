@@ -60,7 +60,7 @@ public class UsersController : ControllerBase
         await _usersService.CreateUser(newUser);
         return Created($"/user/{newUser.Id}", newUser);
     }
-    [HttpPut("{id:guid}")]
+    [HttpPatch("{id:guid}")]
     public async Task<IActionResult> UpdateUser(Guid id, UserDto user)
     {
         var updateUser = MapCustomerObject(user);

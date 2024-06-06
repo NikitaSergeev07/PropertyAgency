@@ -25,9 +25,10 @@ public class FavoritesService : IFavoritesService
         return await _favoritesRepository.Delete(id);
     }
 
-    public async Task<Favorite> CreateFavorite(Favorite entity)
+    public async Task<Guid> CreateFavorite(Favorite entity)
     {
-        return await _favoritesRepository.Create(entity);
+        var favoriteId = await _favoritesRepository.Create(entity);
+        return favoriteId;
     }
     
 }

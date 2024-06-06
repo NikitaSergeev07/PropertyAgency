@@ -6,6 +6,6 @@ public interface IFavoritesService
 {
     Task<List<Favorite>> GetFavoritesByUserId(Guid userId);
     Task<bool> DeleteFavorite(Guid id);
-    Task<Favorite> CreateFavorite(Favorite entity);
+    Task<Guid> CreateFavorite(Favorite entity);
     
 }

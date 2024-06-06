@@ -23,7 +23,8 @@ builder.Services.AddCors();
 builder.Services.AddDbContext<ApplicationDbContext>(
     options =>
     {
-        options.UseSqlite(builder.Configuration.GetConnectionString(nameof(ApplicationDbContext)));
+        options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(ApplicationDbContext)));
+        //options.UseSqlite(builder.Configuration.GetConnectionString(nameof(ApplicationDbContext)));
     }
 );
 
@@ -37,10 +38,17 @@ builder.Services.AddScoped<IAddressesRepository, AddressesRepository>();
 builder.Services.AddScoped<IAddressesService, AddressesService>();
 builder.Services.AddScoped<IRentalsRepository, RentalsRepository>();
 builder.Services.AddScoped<IRentalsService, RentalsService>();
+<<<<<<< HEAD
 builder.Services.AddScoped<ITransactionsRepository, TransactionsRepository>();
 builder.Services.AddScoped<ITransactionsService, TransactionsService>();
 builder.Services.AddScoped<IImagesRepository, ImagesRepository>();
 builder.Services.AddScoped<IImagesService, ImagesService>();
+=======
+builder.Services.AddScoped<IImagesRepository, ImagesRepository>();
+builder.Services.AddScoped<IImagesService, ImagesService>();
+builder.Services.AddScoped<IOperationsRepository, OperationsRepository>();
+builder.Services.AddScoped<IOperationsService, OperationsService>();
+>>>>>>> Nikita
 builder.Services.AddScoped<JwtService>();
 
 var (tokenValidationParameters, secureKey) = TokenValidationParametersFactory.Create(builder.Configuration);

@@ -9,7 +9,7 @@ using Services.Interfaces;
 namespace PropertyAgency.API.Controllers;
 
 
-[Authorize]
+[Authorize(Policy = "UserPolicy")]
 [ApiController]
 [Route("[controller]")]
 public class FavoritesController : ControllerBase
@@ -33,7 +33,7 @@ public class FavoritesController : ControllerBase
         return result;
     }
     
-    [HttpGet("favorites")]
+    [HttpGet]
     public async Task<IActionResult> GetUserFavorites()
     {
         var token = Request.Cookies["jwt"];
@@ -109,9 +109,43 @@ public class FavoritesController : ControllerBase
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteFavorite(Guid id)
     {
-        return Ok(await _favoritesService.DeleteFavorite(id));
-    
+        var token = Request.Cookies["jwt"];
+        if (string.IsNullOrEmpty(token))
+        {
+            return Unauthorized();
+        }
+
+        JwtSecurityToken jwtToken;
+        try
+        {
+            jwtToken = _jwtService.Verify(token);
+        }
+        catch
+        {
+            return Unauthorized();
+        }
+
+        if (jwtToken == null)
+        {
+            return Unauthorized();
+        }
+
+        Guid userId = Guid.Parse(jwtToken.Subject);
+        var user = await _usersService.GetById(userId);
+        if (user == null)
+        {
+            return Unauthorized();
+        }
+
+        var result = await _favoritesService.DeleteFavorite(id);
+        if (!result)
+        {
+            return NotFound();
+        }
+
+        return Ok();
     }
+
     
     
 }
