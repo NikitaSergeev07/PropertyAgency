@@ -16,14 +16,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Rental> Rentals { get; set; }
     public DbSet<Image> Images { get; set; }
-<<<<<<< HEAD
-
-    public DbSet<Transaction> Transactions { get; set; }
-
-=======
     
     public DbSet<Operation> Operations { get; set; }
->>>>>>> Nikita
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -52,31 +46,10 @@ public class ApplicationDbContext : DbContext
             .HasOne(_ => _.Property)
             .WithMany(_ => _.Rentals)
             .HasForeignKey(_ => _.PropertyId);
-<<<<<<< HEAD
-        
-        modelBuilder.Entity<Transaction>()
-            .HasOne(_ => _.Property)
-            .WithMany(_ => _.Transactions)
-            .HasForeignKey(_ => _.PropertyId);
-        
-        modelBuilder.Entity<Transaction>()
-            .HasOne(_ => _.Buyer)
-            .WithMany(_ => _.Transactions)
-            .HasForeignKey(_ => _.BuyerId);
-        
-        modelBuilder.Entity<Transaction>()
-            .HasOne(_ => _.Seller)
-            .WithMany(_ => _.Transactions)
-            .HasForeignKey(_ => _.SellerId);
-=======
-
->>>>>>> Nikita
         modelBuilder.Entity<Image>()
             .HasOne(_ => _.Property)
             .WithMany(_ => _.Images)
             .HasForeignKey(_ => _.PropertyId);
-<<<<<<< HEAD
-=======
 
         modelBuilder.Entity<Operation>()
             .HasOne(_ => _.Property)
@@ -99,7 +72,6 @@ public class ApplicationDbContext : DbContext
             .WithMany(_ => _.SellerOperations)
             .HasForeignKey(_ => _.SellerId)
             .OnDelete(DeleteBehavior.Restrict);
->>>>>>> Nikita
     }
     
     

@@ -15,17 +15,6 @@ public class FavoritesRepository : IFavoritesRepository
     
     public async Task<Guid> Create(Favorite entity)
     {
-<<<<<<< HEAD
-        // Проверка, существует ли уже запись для данного пользователя и продукта
-        var existingFavorite = await _context.Favorites
-            .FirstOrDefaultAsync(fp => fp.UserId == entity.UserId && fp.PropertyId == entity.PropertyId);
-
-        if (existingFavorite != null)
-        {
-            // Такая запись уже существует, значит продукт уже добавлен в избранное
-            throw new InvalidOperationException("Продукт уже добавлен в избранное.");
-        }
-=======
         var existingFavorite = await _context.Favorites.FirstOrDefaultAsync(f => f.PropertyId == entity.PropertyId && f.UserId == entity.UserId);
 
         if (existingFavorite != null)
@@ -33,7 +22,6 @@ public class FavoritesRepository : IFavoritesRepository
             return existingFavorite.Id;
         }
 
->>>>>>> Nikita
         await _context.Favorites.AddAsync(entity);
         await _context.SaveChangesAsync();
         return entity.Id;
